@@ -71,6 +71,40 @@ def stopwords_remover(x): #funzione per la rimozione delle stopwords
 
 clean_doc['CONTENT'] = clean_doc['CONTENT'].apply(stopwords_remover)
 clean = clean_doc['CONTENT']
+
+ss = nltk.SnowballStemmer(language = 'english')
+
+
+def stemmer(x): #funzione per la rimozione dei prefissi dei verbi
+    x = took.tokenize(x)
+    w = [ss.stem(i) for i in x]
+
+    return " ".join(w)
+
+
+clean_doc['CONTENT'] = clean_doc['CONTENT'].apply(stemmer)
+clean = clean_doc['CONTENT']
+
+nltk.download('omw-1.4')
+nltk.download('wordnet')
+wn = nltk.WordNetLemmatizer()
+
+
+def lemmatizer(x): #funzione per la rimozione delle stopwords
+    x = took.tokenize(x)
+    w = [wn.lemmatize(i) for i in x]
+
+    return " ".join(w)
+
+
+clean_doc['CONTENT'] = clean_doc['CONTENT'].apply(lemmatizer)
+clean = clean_doc['CONTENT']
+
+
+
+
+
+
 for lines in clean:
     print(lines)
 

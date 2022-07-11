@@ -4,9 +4,18 @@ import re
 from nltk.tokenize import TweetTokenizer
 from nltk.corpus import words
 from nltk.metrics.distance  import edit_distance
-from pattern.en import spelling
+
+#TODO implementare un nuovo stemmer
 
 clean_doc = pd.read_csv('Dataset/CompleteYoutubeDataset.csv')
+#nome colonna,0 per la riga/1 per la colonna
+clean_doc = clean_doc.drop("CONTATORE",1)
+clean_doc = clean_doc.drop("COMMENT_ID",1)
+clean_doc = clean_doc.drop("DATE",1)
+clean_doc = clean_doc.drop("AUTHOR",1)
+
+
+
 
 
 def lower_converter(lines): #questa funzione converte le lettere maiuscole in minuscole
@@ -75,7 +84,6 @@ def correct_words(text):
     for word in line:
         print("checking", word)
         word = reduce_lengthening(word)
-        word = spelling(word)
         print("correcting", word)
 
     return " ".join(line)
@@ -117,18 +125,14 @@ def stopwords_remover(x): #funzione per la rimozione delle stopwords
 clean_doc['CONTENT'] = clean_doc['CONTENT'].apply(stopwords_remover)
 clean = clean_doc['CONTENT']
 
-ss = nltk.SnowballStemmer(language = 'english')
 
 
-def stemmer(x): #funzione per la rimozione dei prefissi dei verbi
-    x = took.tokenize(x)
-    w = [ss.stem(i) for i in x]
-
-    return " ".join(w)
 
 
-clean_doc['CONTENT'] = clean_doc['CONTENT'].apply(stemmer)
-clean = clean_doc['CONTENT']
+
+
+#clean_doc['CONTENT'] = clean_doc['CONTENT'].apply(stemmer)
+#clean = clean_doc['CONTENT']
 
 nltk.download('omw-1.4')
 nltk.download('wordnet')

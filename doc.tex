@@ -42,20 +42,41 @@
     In caso negativo, l'autore del commento verrà segnalato alla piattaforma, che provvederà ad eliminarlo da quest'ultima, assieme a tutto il materiale da lui pubblicato.
 
     \subsection{Specifiche PEAS}
-    Le specifiche PEAS rappresentano
+    Le specifiche PEAS rappresentano diverse proprietà tramite cui è possibile descrivere l'agente. \newline
 
-P = Performance. Misura di prestazione per valutare l'operato di un agente.
-Percentauale di commenti spam categorizzati correttamente.
+    \begin{itemize}
+        \item 
+        {\bfseries P = Performance.} Misura di prestazione per valutare l'operato di un agente.
+        L'agente verrà valutato in base alla percentauale di commenti spam categorizzati correttamente.
+        \item 
+        {\bfseries E = Environment.} Vanno descritti gli elementi che formano l'ambiente.
+        L'agente nel caso inquestione lavorerà in un ambiente:
+            \begin{itemize}
+                \item {\bfseries Completamente Osservabile}, in quanto 
+                \item {\bfseries Deterministico}
+                \item {\bfseries Episodico}
+                \item {\bfseries Statico}
+                \item {\bfseries Discreto}
+                \item {\bfseries Singolo}
+            \end{itemize}
+          
+        Social Network, utenti della piattaforma
+        \item 
+        {\bfseries A = Actuators.} Gli attuatori disponibili all'agente per intraprendere le azioni.
+        List di email relative ai commenti spammer identificati
+        \item 
+        {\bfseries S = Sensors.} I sensori attraverso cui riceve gli input percettivi.
+        Dataset di commenti
 
-E = Environment. Vanno descritti gli elementi che formano l'ambiente.
-Completamente Osservabile, Deterministico, Episodico, Statico, Discreto, Singolo.
-Social Network, utenti della piattaforma
 
-A = Actuators. Gli attuatori disponibili all'agente per intraprendere le azioni.
-List di email relative ai commenti spammer identificati                    
+        
+      \end{itemize}
+    
 
-S = i sensori attraverso cui riceve gli input percettivi.
-Dataset di commenti
+    
+
+                        
+
 
     \subsection{Obiettivi}
     \section{Raccolta, analisi e preprocessing dei dati}

@@ -1,8 +1,10 @@
 # Fdb version 3
-["pdflatex"] 1657530888 "c:/Users/Muriel Rossi/SPAMMER/SpamDetectorDev/doc.tex" "doc.pdf" "doc" 1657530889
+["pdflatex"] 1657532642 "c:/Users/Muriel Rossi/SPAMMER/SpamDetectorDev/doc.tex" "doc.pdf" "doc" 1657532644
   "C:/Users/Muriel" 1569087186 107 c951126861116b6622e27336c130c227 ""
   "C:/Users/Muriel Rossi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1651658672 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+  "C:/Users/Muriel Rossi/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1657532001 11548 8f53ed0ab93e2cfddde18710101abb83 ""
   "C:/Users/Muriel Rossi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1651659441 10250300 769659ffa05399bc0ad820fa6fbf85c8 ""
+  "C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233955448 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -36,9 +38,9 @@
   "C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1638778684 8448 96f18c76bf608a36ee6fbf021ac1dd32 ""
   "C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1644218660 29921 d0acc05a38bd4aa3af2017f0b7c137ce ""
   "c:/Users/Muriel" 1569087186 107 c951126861116b6622e27336c130c227 ""
-  "c:/Users/Muriel Rossi/SPAMMER/SpamDetectorDev/doc.tex" 1657530883 4327 4b8bbb4fc5331ef2ed9b10ab9e772cb6 ""
-  "doc.aux" 1657530889 1026 4889763948a4c86c79a0d40613442bca "pdflatex"
-  "doc.tex" 1657530883 4327 4b8bbb4fc5331ef2ed9b10ab9e772cb6 ""
+  "c:/Users/Muriel Rossi/SPAMMER/SpamDetectorDev/doc.tex" 1657532639 5046 47d2609789ccdfcd6513b0e6ea311307 ""
+  "doc.aux" 1657532644 1026 4889763948a4c86c79a0d40613442bca "pdflatex"
+  "doc.tex" 1657532639 5046 47d2609789ccdfcd6513b0e6ea311307 ""
   (generated)
   "doc.aux"
   "doc.log"

@@ -33,12 +33,51 @@
     Questo progetto si prefige lo scopo di manutenere una piattaforma libera dal bombardamento pubblicitario e dare modo all'utenza di potersi esprimere liberamente
     all'interno di questa, libera dall'ansia e dalla continua distrazione provocata dal chiasso delle inserzioni.
     \section{Descrizione dell'agente}
-    Allo scopo di realizzare questo progetto, è stato introdotto un agente intelligente che, operando nel contesto dei commenti relativi ad ogni 
-    pubblicazione effettuata sulla piattaforma, sarà in grado di segnalare gli elementi con sospetto di promotion.
+    Allo scopo di realizzare questo progetto, è stato introdotto un agente intelligente, sarà lui ad occuparsi della supervisione della piattaforma, indagando fra i 
+    commenti relativi alle varie pubblicazioni.
     \subsection{Obiettivi}
-    L'obiettivo dell'agente sarà quello di analizzare
-    \subsection{Specifica PEAS}
-    ftghfygjdyj
+    L'obiettivo dell'agente sarà quello di effettuare un'analisi (GIORNALIERA???) dei commenti relativi ad ogni pubblicazione effettuata dagli utenti della piattaforma.
+    Il testo dei vari commenti verrà preso in analisi e, dopo essere stato adeguatamente "pulito", verrà sottoposto all'agente, che sarà in grado di riconoscere se il 
+    testo è conforme alle norme della piattaforma (ovvero se non è sospettato come spam). \newline
+    In caso negativo, l'autore del commento verrà segnalato alla piattaforma, che provvederà ad eliminarlo da quest'ultima, assieme a tutto il materiale da lui pubblicato.
+
+    \subsection{Specifiche PEAS}
+    Le specifiche PEAS rappresentano diverse proprietà tramite cui è possibile descrivere l'agente. \newline
+
+    \begin{itemize}
+        \item 
+        {\bfseries P = Performance.} Misura di prestazione per valutare l'operato di un agente.
+        L'agente verrà valutato in base alla percentauale di commenti spam categorizzati correttamente.
+        \item 
+        {\bfseries E = Environment.} Vanno descritti gli elementi che formano l'ambiente.
+        L'agente nel caso inquestione lavorerà in un ambiente:
+            \begin{itemize}
+                \item {\bfseries Completamente Osservabile}, in quanto 
+                \item {\bfseries Deterministico}
+                \item {\bfseries Episodico}
+                \item {\bfseries Statico}
+                \item {\bfseries Discreto}
+                \item {\bfseries Singolo}
+            \end{itemize}
+          
+        Social Network, utenti della piattaforma
+        \item 
+        {\bfseries A = Actuators.} Gli attuatori disponibili all'agente per intraprendere le azioni.
+        List di email relative ai commenti spammer identificati
+        \item 
+        {\bfseries S = Sensors.} I sensori attraverso cui riceve gli input percettivi.
+        Dataset di commenti
+
+
+        
+      \end{itemize}
+    
+
+    
+
+                        
+
+
     \subsection{Obiettivi}
     \section{Raccolta, analisi e preprocessing dei dati}
     \subsection{Scelta del dataset}

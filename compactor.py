@@ -15,7 +15,7 @@ csvShakira = pd.read_csv('Dataset/Youtube05-Shakira.csv')
 #Array che contiene tutti i csv
 cvsses = [csvPsy, csvKatyPerry, csvEminem, csvLMFAO, csvShakira]
 #Concatenazione di tutti i csv
-bigCvs = pd.concat(cvsses)
-print(bigCvs)
+bigCsv = pd.concat(cvsses)
+print(bigCsv)
 #Scrittura su file csv
-bigCvs.to_csv('CompleteYoutubeDataset.csv')
+bigCsv.to_csv('CompleteYoutubeDataset.csv')

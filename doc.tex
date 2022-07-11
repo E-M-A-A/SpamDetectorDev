@@ -52,10 +52,12 @@
         {\bfseries E = Environment.} Vanno descritti gli elementi che formano l'ambiente.
         L'agente nel caso inquestione lavorerà in un ambiente:
             \begin{itemize}
-                \item {\bfseries Completamente Osservabile}, in quanto 
-                \item {\bfseries Deterministico}
-                \item {\bfseries Episodico}
-                \item {\bfseries Statico}
+                \item {\bfseries Completamente Osservabile}, in ogni momento l'agente ha completa conoscenza
+                dell'ambiente in cui lavora, ovvero la collezione di commenti;
+                \item {\bfseries Deterministico}, l'ambiente verrà modificato in base alla decisione dell'agente;
+                \item {\bfseries Episodico}, l'agente viene attivato ad intervalli temporali di 24h. La scelta che
+                compirà l'agente in un singolo episodio dipenderà dall'episodio stesso;
+                \item {\bfseries Statico}, 
                 \item {\bfseries Discreto}
                 \item {\bfseries Singolo}
             \end{itemize}

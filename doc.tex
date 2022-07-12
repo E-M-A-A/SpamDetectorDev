@@ -6,7 +6,7 @@
 
 
 
-\usepackage[Conny]{fncychap}
+\usepackage[Glenn]{fncychap}
 \title{Storytelling} % Sets article title
 \author{Emmanuele Virginio Coppola, Muriel Rossi, Alessandro Marigliano} % Sets authors name
 
@@ -83,11 +83,16 @@
                         
 
 
-    \section{Obiettivi}
+   
     \chapter{Raccolta, analisi e preprocessing dei dati}
     \section{Scelta del dataset}
     \section{Pulizia del dataset}
     \section{Bilanciamento del dataset}
+    \chapter{Creazione agente}
+    Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato, ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
+    L'agente dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento. Inizialmente è stato sottoposto all'agente 
+    un dataset di commenti, già targettati "SI" se sono spam e "NO" se non sono spam. E' quindi stata creata una tabella dove venivano individuate, per ciascun commento,
+    la frequenza con la quale alcune parole ricorrevano. In questo caso ci è venuto in aiuto l'algoritmo Naive Bayes
 
 
 

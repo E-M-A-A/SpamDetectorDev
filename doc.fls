@@ -117,17 +117,19 @@ INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfo
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 OUTPUT doc.pdf
 INPUT C:\Users\Muriel Rossi\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT .\doc.toc
 INPUT doc.toc
 INPUT doc.toc
-INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 OUTPUT doc.toc
-INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss17.tfm
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT doc.aux
 INPUT C:\Users\Muriel Rossi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
@@ -148,5 +150,9 @@ INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\ams
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmss12.pfb
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmss12.pfb
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmss17.pfb
+INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmss17.pfb
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb

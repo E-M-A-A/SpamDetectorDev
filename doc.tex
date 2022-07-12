@@ -1,16 +1,17 @@
-% This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
-
-\documentclass{report} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+\documentclass{report} 
 
 \usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+\usepackage{graphfig, subfig}
+\usepackage{graphicx}
+\usepackage{hyperref}
 
-
+\usepackage{caption}
+\captionsetup{labelformat=empty,textfont=sl}
 
 \usepackage[Glenn]{fncychap}
 \title{Storytelling} % Sets article title
 \author{Emmanuele Virginio Coppola, Muriel Rossi, Alessandro Marigliano} % Sets authors name
 
-% The preamble ends with the command \begin{document}   
 \begin{document} % All begin commands must be paired with an end command somewhere 
     \maketitle % creates title using information in preamble (title, author, date)  $\downarrow$   \date{\today} % Sets date for date compiled
 
@@ -60,8 +61,7 @@
                 dell'ambiente in cui lavora, ovvero la collezione di commenti;
                 \item {\bfseries Deterministico}, l'ambiente verrà modificato in base alla decisione dell'agente, 
                 ovvero verranno rimossi gli utenti che l'agente deciderà di segnalare;
-                \item {\bfseries Episodico}, l'agente viene attivato ad intervalli temporali di 24h. La scelta che
-                compirà l'agente in un singolo episodio dipenderà dall'episodio stesso;
+                \item {\bfseries Episodico}, l'agente viene attivato ad intervalli temporali di 24h. La scelta che compirà l'agente in un singolo episodio dipenderà dall'episodio stesso;
                 \item {\bfseries Statico}, mentre analizza la query di commenti, l'ambiente rimane invariato;
                 \item {\bfseries Discreto}, l'ambiente infatti fornisce un insieme di parole finite per ogni commento. L'agente
                 dovrà decidere orientandosi fra queste ed avrà azioni limitate (segnalare l'utente o non farlo); 
@@ -72,10 +72,8 @@
         {\bfseries A = Actuators.} L'agente potrà effettuare il suo giudizio stilando una lista di email relative ai proprietari dei commenti che sono stati sospetatti di spam.
         \item 
         {\bfseries S = Sensors.} Il modo in cui l'agente riceverà gli input percettivi sarà tramite il dataset di commenti.I sensori attraverso cui riceve gli input percettivi.
-
-
         
-      \end{itemize}
+    \end{itemize}
     
 
     
@@ -85,29 +83,93 @@
 
    
     \chapter{Raccolta, analisi e preprocessing dei dati}
+    L'agente, prima di essere inserito all'interno della piattaforma, è stato "allenato" su un dataset, scelto accuratamente per massimizzare la somiglianza ai dati con cui dovrà lavorare 
+    durante la sua effettiva applicazione. 
     \section{Scelta del dataset}
+    Il dataset preso in esame raccoglie diversi commenti relativi a video sulla piattaforma di streaming YouTube. 
+    Consiste in un insieme di tuple contenenti le colonne:
+    \begin{itemize}
+        \item Identificativo del commento
+        \item "AUTHOR", l'autore
+        \item "DATE", la data in cui è stato pubblicato
+        \item "CONTENT", il suo contenuto
+        \item "CLASS", contenente un numero (0 o 1), che individua il commento come ham o spam rispettivamente.
+    \end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width = 0.8\textwidth]{immagini/datasetExample.png}
+        \caption{Immagine del dataset iniziale}
+
+    \end{figure}
+
+
+    E' stato scelto questo dataset in quanto i commenti susseguenti i video si avvicinavano estremamente alle possibili tuple di commenti
+    di un reale caso applicativo all'interno della piattaforma.
+    Inoltre presentava un'amplia gamma di instanze, così da permettere un buon addestramento dell'agente.
+    Il dataset è stato trovato a questo indirizzo: \newline 
+    \href{https://www.kaggle.com/datasets/lakshmi25npathi/images}{https://www.kaggle.com/datasets/lakshmi25npathi/images}.
+    
     \section{Pulizia del dataset}
+    Il dataset, nonostante fosse già estremamente adeguato alle esigenze dell'agente, durante la fase di feature extraction, 
+    è stato privato della colonne identificativo del commento, "AUTHOR", "DATE", in quanto avrebbero potuto falsare i risultati dell'agente, 
+    perchè non inerenti all'identificazione di un commento spam.
+    L'operazione di pulizia si è poi composta delle seguenti fasi: 
+    \begin{itemize}
+        \item {\bfseries Conversione da uppercase a lowercase}, tutte le lettere in maiuscolo sono state convertite in minuscolo;
+        \item {\bfseries Rimozione degli invii}, tutti i "break" sono stati rimossi;
+        \item {\bfseries Rimozione della punteggiatura}, è stata eliminata ongi forma di punteggiatura;
+        \item {\bfseries Trascrizione dei link}, i link sono stati convertiti in singole parole;
+        \item {\bfseries Rimozione degli spazi}, gli spazi consecutivi, ovvero in  quantità maggiore di 1, sono stati rimossi;
+        \item {\bfseries Eliminazione lettere ripetute}, lettere identiche, ripetute in quantità maggiore di 2, sono state rimosse;
+        \item {\bfseries Correzzione delle parole}, parole non presenti all'interno del vocabolario (scritte quindi in maniera errata oppure in tempi diversi dall'infinito), sono state sottoposte 
+        ad un'algoritmo di pattern matching. La funzione nello specifico, cerca inizialmente il match con parole di uso più comune. Il caso in cui
+        la parola presenti più matches, viene scelta la prima parola ad essere stata individuata;
+        \item {\bfseries Eliminazione delle "stopwords"}, tutte le parole che rientravano nel dizionario delle stopwords (ovvero parole che non aggiungono alcuna informazione) 
+        sono state eliminate;
+        \item {\bfseries Eliminazione valori nulli}, tutti i testi che, dopo aver superato questa scrematura, risultavano infine vuoti, sono stati eliminati.
+
+    \end{itemize}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width = 0.9\textwidth]{immagini/datasetPulito.png}
+        \caption{Immagine del dataset dopo le operazioni di pulizia}
+
+    \end{figure}
+
     \section{Bilanciamento del dataset}
+    Questo è il grafico della suddivisione fra spam ed ham nei vari dataset.
+    \begin{figure}
+        \centering
+        \includegraphics[width = 0.9\textwidth]{immagini/DatasetSeparati.png}
+    \end{figure}
+
+    Questo è il grafico della suddivisione fra spam ed ham in tutti i dataset.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width = 0.9\textwidth]{immagini/DatasetUnico.png}
+    \end{figure}
+
+
+    drgftghgn
     \chapter{Creazione agente}
     Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato, ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
     L'agente dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento. Inizialmente è stato sottoposto all'agente 
-    un dataset di commenti, ognuno dei quali era contrassegnato da un target "SI", se lo specifico commento era spam, o contrassegnato da target "NO" se il commento era ham.
+    un dataset di commenti, ognuno dei quali era contrassegnato da un target "1", se lo specifico commento era spam, o contrassegnato da target "0" se il commento era ham.
     E' quindi stata creata una tabella dove venivano individuate, per ciascun commento,
     la frequenza con la quale alcune parole ricorrevano. In questo caso ci è venuto in aiuto l'algoritmo {\bfseries Naive Bayes}:
     \newline
-    \begin{equation}\label{ritardo-medio}
+    \begin{equation}\label{bho}
         { p(B|A)  p(A)\over p(B)}
     \end{equation}
     \newline
     che, nel nostro caso, si traduce in:
     \newline
-    \begin{equation}\label{ritardo-medio}
+    \begin{equation}\label{bho2}
         p(spam|commento) = { p(commento|spam)  p(spam)\over p(commento)}
     \end{equation}
     \newline
     ovvero, la probabilità che un commento sia spam, è uguale alla probabilità che le parole del commento compaiano in un commento spam, dato che è spam, per la probabilità 
     che il commento sia spam, diviso la probabilità che queste parole compaiano nel commento.
-
-
-
-\end{document} % This is the end of the document
+\end{document}

@@ -73,7 +73,7 @@ c = ['purple', 'green']
 # bar plot
 plt.figure(figsize=(6, 5))
 plt.bar(x, height=h, color=c, width=0.4)
-plt.xlabel('Dataset', fontweight='bold', fontsize=15)
+plt.xlabel('Tipo', fontweight='bold', fontsize=15)
 plt.ylabel('No. Commenti', fontweight='bold', fontsize=15)
 
 plt.show()

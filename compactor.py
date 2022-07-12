@@ -19,3 +19,6 @@ bigCsv = pd.concat(cvsses)
 print(bigCsv)
 #Scrittura su file csv
 bigCsv.to_csv('CompleteYoutubeDataset.csv')
+
+
+

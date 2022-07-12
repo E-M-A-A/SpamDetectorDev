@@ -110,7 +110,26 @@
     \href{https://www.kaggle.com/datasets/lakshmi25npathi/images}{https://www.kaggle.com/datasets/lakshmi25npathi/images}.
     
     \section{Pulizia del dataset}
-    Il dataset, nonostante fosse già estremamente adeguato alle esigenze dell'agente, presentava in ogni caso dati
+    Il dataset, nonostante fosse già estremamente adeguato alle esigenze dell'agente, durante la fase di feature extraction, 
+    è stato privato della colonne identificativo del commento, "AUTHOR", "DATE", in quanto avrebbero potuto falsare i risultati dell'agente, 
+    perchè non inerenti all'identificazione di un commento spam.
+    L'operazione di pulizia si è poi composta delle seguenti fasi: 
+    \begin{itemize}
+        \item {\bfseries Conversione da uppercase a lowercase}, tutte le lettere in maiuscolo sono state convertite in minuscolo;
+        \item {\bfseries Rimozione degli invii}, tutti i "break" sono stati rimossi;
+        \item {\bfseries Rimozione della punteggiatura}, è stata eliminata ongi forma di punteggiatura;
+        \item {\bfseries Trascrizione dei link}, i link sono stati convertiti in singole parole;
+        \item {\bfseries Rimozione degli spazi}, gli spazi consecutivi, ovvero in  quantità maggiore di 1, sono stati rimossi;
+        \item {\bfseries Eliminazione lettere ripetute}, lettere identiche, ripetute in quantità maggiore di 2, sono state rimosse;
+        \item {\bfseries Correzzione delle parole}, parole non presenti all'interno del vocabolario (scritte quindi in maniera errata oppure in tempi diversi dall'infinito), sono state sottoposte 
+        ad un'algoritmo di pattern matching. La funzione nello specifico, cerca inizialmente il match con parole di uso più comune. Il caso in cui
+        la parola presenti più matches, viene scelta la prima parola ad essere stata individuata;
+        \item {\bfseries Eliminazione delle "stopwords"}, tutte le parole che rientravano nel dizionario delle stopwords (ovvero parole che non aggiungono alcuna informazione) 
+        sono state eliminate;
+        \item {\bfseries Eliminazione valori nulli}, tutti i testi che, dopo aver superato questa scrematura, risultavano infine vuoti, sono stati eliminati.
+
+    \end{itemize}
+
     \section{Bilanciamento del dataset}
     Questo è il grafico della suddivisione fra spam ed ham nei vari dataset.
     \begin{figure}

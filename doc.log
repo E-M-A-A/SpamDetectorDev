@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  12 JUL 2022 18:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  12 JUL 2022 18:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -357,56 +357,56 @@ Package pdftex.def Info: immagini/datasetExample.png  used on input line 100.
 (pdftex.def)             Requested size: 276.00105pt x 196.1017pt.
 [5
 
-]
-<immagini/DatasetSeparati.png, id=87, 867.24pt x 578.16pt>
+] [6 <./immagini/datasetExample.png (PNG copy)>]
+<immagini/DatasetSeparati.png, id=94, 867.24pt x 578.16pt>
 File: immagini/DatasetSeparati.png Graphic file (type png)
 <use immagini/DatasetSeparati.png>
-Package pdftex.def Info: immagini/DatasetSeparati.png  used on input line 118.
+Package pdftex.def Info: immagini/DatasetSeparati.png  used on input line 137.
 (pdftex.def)             Requested size: 310.4979pt x 206.9994pt.
-<immagini/DatasetUnico.png, id=89, 433.62pt x 361.35pt>
+<immagini/DatasetUnico.png, id=96, 433.62pt x 361.35pt>
 File: immagini/DatasetUnico.png Graphic file (type png)
 <use immagini/DatasetUnico.png>
-Package pdftex.def Info: immagini/DatasetUnico.png  used on input line 125.
+Package pdftex.def Info: immagini/DatasetUnico.png  used on input line 144.
 (pdftex.def)             Requested size: 310.4979pt x 258.76028pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6 <./immagini/datasetExample.png (PNG copy)>] [7 <./immagini/DatasetSeparati.png> <./immagini/DatasetUnico.png>]
+[7 <./immagini/DatasetSeparati.png>] [8 <./immagini/DatasetUnico.png>]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--137
+Underfull \hbox (badness 10000) in paragraph at lines 150--156
 
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 138.
+(amsmath)                 on input line 157.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--143
+Underfull \hbox (badness 10000) in paragraph at lines 158--162
 
  []
 
-[8
+[9
 
 ] (doc.aux)
 Package rerunfilecheck Info: File `doc.out' has not changed.
 (rerunfilecheck)             Checksum: 2817D1CB107F3B3235340445426080E7;1379.
  ) 
 Here is how much of TeX's memory you used:
- 10484 strings out of 478582
- 170656 string characters out of 2841005
- 455434 words of memory out of 3000000
- 28522 multiletter control sequences out of 15000+600000
+ 10486 strings out of 478582
+ 170670 string characters out of 2841005
+ 455436 words of memory out of 3000000
+ 28523 multiletter control sequences out of 15000+600000
  476224 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,7n,79p,420b,440s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Muriel Rossi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on doc.pdf (9 pages, 256100 bytes).
+Output written on doc.pdf (10 pages, 259755 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
+ 177 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

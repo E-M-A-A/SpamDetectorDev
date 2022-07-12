@@ -11,9 +11,8 @@ from symspellpy import SymSpell, Verbosity
 nltk.download("stopwords")
 nltk.download('omw-1.4')
 nltk.download('wordnet')
-clean_doc = pd.read_csv('Dataset/Youtube04-Eminem.csv')
+clean_doc = pd.read_csv('Dataset/Youtube02-KatyPerry.csv')
 # nome colonna,0 per la riga/1 per la colonna
-
 clean_doc = clean_doc.drop("COMMENT_ID", 1)
 clean_doc = clean_doc.drop("DATE", 1)
 clean_doc = clean_doc.drop("AUTHOR", 1)
@@ -144,4 +143,4 @@ clean = clean_doc['CONTENT']
 for lines in clean:
     print(lines)
 
-clean_doc.to_csv('Dataset/DatasetCleanYoutube04-Eminem.csv')
+clean_doc.to_csv('Dataset/DatasetCleanYoutube02-KatyPerry.csv')

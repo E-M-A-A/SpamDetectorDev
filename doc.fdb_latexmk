@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1657641610 "c:/Users/Muriel Rossi/SPAMMER/SpamDetectorDev/doc.tex" "doc.pdf" "doc" 1657641613
+["pdflatex"] 1657644185 "c:/Users/Muriel Rossi/SPAMMER/SpamDetectorDev/doc.tex" "doc.pdf" "doc" 1657644189
   "C:/Program Files/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576437202 40635 c40361e206be584d448876bba8a64a3b ""
   "C:/Program Files/MiKTeX/tex/generic/bitset/bitset.sty" 1575930176 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
   "C:/Program Files/MiKTeX/tex/generic/etexcmds/etexcmds.sty" 1576437238 7734 b98cbb34c81f667027c1e3ebdbfce34b ""
@@ -89,14 +89,15 @@
   "C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1644218660 29921 d0acc05a38bd4aa3af2017f0b7c137ce ""
   "C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "c:/Users/Muriel" 1569087186 107 c951126861116b6622e27336c130c227 ""
-  "c:/Users/Muriel Rossi/SPAMMER/SpamDetectorDev/doc.tex" 1657641607 8875 d296d79abea30732ee4ff2205342686f ""
-  "doc.aux" 1657641613 2342 4dd8f96a6d5e1fa117a4429d68dd06b6 "pdflatex"
-  "doc.out" 1657641613 1379 2817d1cb107f3b3235340445426080e7 "pdflatex"
-  "doc.tex" 1657641607 8875 d296d79abea30732ee4ff2205342686f ""
-  "doc.toc" 1657641613 703 6e18a31c11d60bcf64cdbb16401ea215 "pdflatex"
+  "c:/Users/Muriel Rossi/SPAMMER/SpamDetectorDev/doc.tex" 1657644181 10919 5c4f38bcee7ab3002debbfd9c9406446 ""
+  "doc.aux" 1657644188 2521 bb1d2aa01b9a25c04b1aa915bf01fc77 "pdflatex"
+  "doc.out" 1657644188 1379 2817d1cb107f3b3235340445426080e7 "pdflatex"
+  "doc.tex" 1657644181 10919 5c4f38bcee7ab3002debbfd9c9406446 ""
+  "doc.toc" 1657644188 703 463b8eec7c69a22680888c3439f10f71 "pdflatex"
   "immagini/DatasetSeparati.png" 1657631894 23468 a70a1c682ac6a7bfe42cbe8169c98db0 ""
   "immagini/DatasetUnico.png" 1657631894 13301 8421a2a8355afca78fffdcd0896dbb04 ""
   "immagini/datasetExample.png" 1657641114 52838 fdda63b7ceb92439c06161e41c7b689a ""
+  "immagini/datasetPulito.png" 1657644039 65323 6af6fe4655ccf2ef88c8e6eaef4846a5 ""
   (generated)
   "doc.aux"
   "doc.log"

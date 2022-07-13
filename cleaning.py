@@ -137,6 +137,16 @@ def lemmatizer(x):  # funzione per la rimozione delle stopwords
 
     return " ".join(w)
 
+def null_remover(x): #funzione per la rimozione dei valori nulli
+    x = took.tockenize(x)
+    w = [wn.lemmatize(i) for i in x]
+    a = True;
+    for word in w:
+        if word != " ":
+            a = False;
+    if a == False:
+            return " ".join(w)
+
 
 clean_doc['CONTENT'] = clean_doc['CONTENT'].apply(lemmatizer)
 clean = clean_doc['CONTENT']

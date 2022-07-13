@@ -20,3 +20,4 @@ bigCsv = bigCsv.loc[:, ~bigCsv.columns.str.contains('^Unnamed')]
 print(bigCsv)
 #Scrittura su file csv
 bigCsv.to_csv('CompleteYoutubeDatasetClean.csv')
+

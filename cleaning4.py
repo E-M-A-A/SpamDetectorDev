@@ -37,7 +37,7 @@ clean = clean_doc['CONTENT']
 
 
 def punt_remover(lines):  # questa funzione rimuove la punteggiatura dal dataset
-    lines = re.sub("[^A-Za-z ]", "", lines)
+    lines = re.sub("[^A-Za-z ]", " ", lines)
     return lines
 
 
@@ -46,7 +46,7 @@ clean = clean_doc['CONTENT']
 
 
 def href_remover(lines):  # questa funzione rimuove i link
-    lines = re.sub("href*\w+", "", lines)
+    lines = re.sub("href*\w+", " ", lines)
     return lines
 
 
@@ -55,7 +55,7 @@ clean = clean_doc['CONTENT']
 
 
 def http_remover(lines):  # questa funzione rimuove i link
-    lines = re.sub("http*\w+", "", lines)
+    lines = re.sub("http*\w+", " ", lines)
     return lines
 
 

@@ -37,7 +37,7 @@ clean = clean_doc['CONTENT']
 
 
 def punt_remover(lines):  # questa funzione rimuove la punteggiatura dal dataset
-    lines = re.sub("[^A-Za-z ]", "", lines)
+    lines = re.sub("[^A-Za-z ]", " ", lines)
     return lines
 
 
@@ -46,7 +46,7 @@ clean = clean_doc['CONTENT']
 
 
 def href_remover(lines):  # questa funzione rimuove i link
-    lines = re.sub("href*\w+", "", lines)
+    lines = re.sub("href*\w+", " ", lines)
     return lines
 
 
@@ -55,7 +55,7 @@ clean = clean_doc['CONTENT']
 
 
 def http_remover(lines):  # questa funzione rimuove i link
-    lines = re.sub("http*\w+", "", lines)
+    lines = re.sub("http*\w+", " ", lines)
     return lines
 
 
@@ -136,16 +136,6 @@ def lemmatizer(x):  # funzione per la rimozione delle stopwords
     w = [wn.lemmatize(i) for i in x]
 
     return " ".join(w)
-
-def null_remover(x): #funzione per la rimozione dei valori nulli
-    x = took.tockenize(x)
-    w = [wn.lemmatize(i) for i in x]
-    a = True;
-    for word in w:
-        if word != " ":
-            a = False;
-    if a == False:
-            return " ".join(w)
 
 
 clean_doc['CONTENT'] = clean_doc['CONTENT'].apply(lemmatizer)

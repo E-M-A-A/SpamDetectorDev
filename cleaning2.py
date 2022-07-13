@@ -102,7 +102,7 @@ def word_correction(text):
             "symspellpy", "frequency_dictionary_en_82_765.txt"
         )
         sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1)
-        suggestions = sym_spell.lookup(word, Verbosity.CLOSEST, max_edit_distance=2, include_unknown=True)
+        suggestions = sym_spell.lookup_compound(word, max_edit_distance=2, ignore_non_words=True)
         word = suggestions[0].term  # Prendiamo la prima che troviamo tra quelle con distanza minima
         print("corretta", word)
     return " ".join(line)

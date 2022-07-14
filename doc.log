@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  12 JUL 2022 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  14 JUL 2022 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -231,7 +231,24 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip57
-) (C:\Program Files\MiKTeX\tex/latex/fncychap\fncychap.sty
+) (C:\Program Files\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count291
+\Gm@cntv=\count292
+\c@Gm@tempcnt=\count293
+\Gm@bindingoffset=\dimen163
+\Gm@wd@mp=\dimen164
+\Gm@odd@mp=\dimen165
+\Gm@even@mp=\dimen166
+\Gm@layoutwidth=\dimen167
+\Gm@layoutheight=\dimen168
+\Gm@layouthoffset=\dimen169
+\Gm@layoutvoffset=\dimen170
+\Gm@dimlist=\toks22
+ (C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Program Files\MiKTeX\tex/latex/fncychap\fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \RW=\skip58
 \mylen=\skip59
@@ -243,42 +260,42 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \backskip=\skip65
 ) (C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count291
+\l__color_backend_stack_int=\count294
 \l__pdf_internal_box=\box52
 ) (doc.aux)
 \openout1 = `doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
  (C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count292
-\scratchdimen=\dimen163
+\scratchcounter=\count295
+\scratchdimen=\dimen171
 \scratchbox=\box53
-\nofMPsegments=\count293
-\nofMParguments=\count294
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count295
-\MPscratchDim=\dimen164
-\MPnumerator=\count296
-\makeMPintoPDFobject=\count297
-\everyMPtoPDFconversion=\toks23
+\nofMPsegments=\count296
+\nofMParguments=\count297
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count298
+\MPscratchDim=\dimen172
+\MPnumerator=\count299
+\makeMPintoPDFobject=\count300
+\everyMPtoPDFconversion=\toks24
 ) (C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (C:\Program Files\MiKTeX\tex/latex/grfext\grfext.sty
@@ -295,7 +312,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 15.
+Package hyperref Info: Link coloring OFF on input line 24.
  (C:\Users\Muriel Rossi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty
@@ -303,19 +320,49 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count298
+\c@section@level=\count301
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \nameref on input line 24.
  (doc.out) (doc.out)
 \@outlinefile=\write3
 \openout3 = `doc.out'.
 
 
-Overfull \hbox (12.88255pt too wide) in paragraph at lines 17--17
- [][] 
- []
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69684pt, 56.90553pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23582pt, 56.90552pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69684pt
+* \textheight=731.23582pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 [1
 
@@ -327,7 +374,7 @@ Overfull \hbox (12.88255pt too wide) in paragraph at lines 17--17
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.19     \chapter
+l.28     \chapter
                  {Introduzione} % creates a chapter [1
 
 ]
@@ -337,81 +384,71 @@ Chapter 1.
 ]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 [3
 
 ]
-Overfull \hbox (11.44505pt too wide) in paragraph at lines 64--65
-\OT1/cmr/m/n/10 scelta che com-pir^^Ra l'agente in un sin-golo episo-dio dipen-der^^Ra dall'episodio
- []
-
-[4]
 Chapter 3.
-<immagini/datasetExample.png, id=81, 509.65407pt x 362.10281pt>
+<immagini/datasetExample.png, id=107, 509.65407pt x 362.10281pt>
 File: immagini/datasetExample.png Graphic file (type png)
 <use immagini/datasetExample.png>
-Package pdftex.def Info: immagini/datasetExample.png  used on input line 100.
-(pdftex.def)             Requested size: 276.00105pt x 196.1017pt.
-[5
+Package pdftex.def Info: immagini/datasetExample.png  used on input line 114.
+(pdftex.def)             Requested size: 386.95894pt x 274.9413pt.
+[4
 
-] [6 <./immagini/datasetExample.png (PNG copy)>]
-<immagini/datasetPulito.png, id=94, 717.43031pt x 414.79968pt>
-File: immagini/datasetPulito.png Graphic file (type png)
-<use immagini/datasetPulito.png>
-Package pdftex.def Info: immagini/datasetPulito.png  used on input line 135.
-(pdftex.def)             Requested size: 310.4979pt x 179.52498pt.
-<immagini/DatasetSeparati.png, id=95, 867.24pt x 578.16pt>
+ <./immagini/datasetExample.png (PNG copy)>] [5]
+<immagini/DatasetSeparati.png, id=119, 867.24pt x 578.16pt>
 File: immagini/DatasetSeparati.png Graphic file (type png)
 <use immagini/DatasetSeparati.png>
-Package pdftex.def Info: immagini/DatasetSeparati.png  used on input line 144.
-(pdftex.def)             Requested size: 310.4979pt x 206.9994pt.
-<immagini/DatasetUnico.png, id=97, 433.62pt x 361.35pt>
+Package pdftex.def Info: immagini/DatasetSeparati.png  used on input line 158.
+(pdftex.def)             Requested size: 483.69684pt x 322.47055pt.
+<immagini/DatasetUnico.png, id=121, 433.62pt x 361.35pt>
 File: immagini/DatasetUnico.png Graphic file (type png)
 <use immagini/DatasetUnico.png>
-Package pdftex.def Info: immagini/DatasetUnico.png  used on input line 151.
-(pdftex.def)             Requested size: 310.4979pt x 258.76028pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./immagini/datasetPulito.png (PNG copy)>] [8 <./immagini/DatasetSeparati.png> <./immagini/DatasetUnico.png>]
+Package pdftex.def Info: immagini/DatasetUnico.png  used on input line 167.
+(pdftex.def)             Requested size: 348.26608pt x 290.22105pt.
+ [6 <./immagini/DatasetSeparati.png> <./immagini/DatasetUnico.png>]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--163
+Underfull \hbox (badness 10000) in paragraph at lines 176--182
 
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 164.
+(amsmath)                 on input line 183.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--169
+Underfull \hbox (badness 10000) in paragraph at lines 184--188
 
  []
 
-[9
+[7
+
+]
+Chapter 5.
+[8
 
 ] (doc.aux)
 Package rerunfilecheck Info: File `doc.out' has not changed.
-(rerunfilecheck)             Checksum: 2817D1CB107F3B3235340445426080E7;1379.
+(rerunfilecheck)             Checksum: FE6CC6BBFAB8D6ECA59D5C8860E490D5;2168.
  ) 
 Here is how much of TeX's memory you used:
- 10494 strings out of 478582
- 170890 string characters out of 2841005
- 455436 words of memory out of 3000000
- 28529 multiletter control sequences out of 15000+600000
+ 10987 strings out of 478582
+ 178583 string characters out of 2841005
+ 471922 words of memory out of 3000000
+ 29012 multiletter control sequences out of 15000+600000
  476224 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,7n,79p,420b,440s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 69i,7n,79p,420b,368s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Muriel Rossi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on doc.pdf (10 pages, 326136 bytes).
+Output written on doc.pdf (9 pages, 264930 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,6 +5,15 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
+\usepackage{geometry}
+\geometry{
+a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+}
+
+
 \usepackage{caption}
 \captionsetup{labelformat=empty,textfont=sl}
 
@@ -86,19 +95,24 @@
     L'agente, prima di essere inserito all'interno della piattaforma, è stato "allenato" su un dataset, scelto accuratamente per massimizzare la somiglianza ai dati con cui dovrà lavorare 
     durante la sua effettiva applicazione. 
     \section{Scelta del dataset}
-    Il dataset preso in esame raccoglie diversi commenti relativi a video sulla piattaforma di streaming YouTube. 
-    Consiste in un insieme di tuple contenenti le colonne:
+    Il dataset preso in esame viene composto da query di commenti relativi a diversi video sulla piattaforma di streaming YouTube. 
+    Consiste in un insieme di tuple presentanti le colonne:
     \begin{itemize}
-        \item Identificativo del commento
+
+        \item "COMMENT\textunderscore ID"
+
         \item "AUTHOR", l'autore
         \item "DATE", la data in cui è stato pubblicato
         \item "CONTENT", il suo contenuto
         \item "CLASS", contenente un numero (0 o 1), che individua il commento come ham o spam rispettivamente.
     \end{itemize}
-    \begin{figure}
+
+    
+    \begin{figure}[h]
+
         \centering
         \includegraphics[width = 0.8\textwidth]{immagini/datasetExample.png}
-        \caption{Immagine del dataset iniziale}
+        \caption{Immagine di uno dei dataset iniziali}
 
     \end{figure}
 
@@ -106,19 +120,20 @@
     E' stato scelto questo dataset in quanto i commenti susseguenti i video si avvicinavano estremamente alle possibili tuple di commenti
     di un reale caso applicativo all'interno della piattaforma.
     Inoltre presentava un'amplia gamma di instanze, così da permettere un buon addestramento dell'agente.
-    Il dataset è stato trovato a questo indirizzo: \newline 
+    Le query di commenti sono state trovate a questo indirizzo: \newline 
     \href{https://www.kaggle.com/datasets/lakshmi25npathi/images}{https://www.kaggle.com/datasets/lakshmi25npathi/images}.
     
     \section{Pulizia del dataset}
     Il dataset, nonostante fosse già estremamente adeguato alle esigenze dell'agente, durante la fase di feature extraction, 
-    è stato privato della colonne identificativo del commento, "AUTHOR", "DATE", in quanto avrebbero potuto falsare i risultati dell'agente, 
+    è stato privato della colonne: "COMMENT\textunderscore ID", "AUTHOR", "DATE", in quanto avrebbero potuto falsare i risultati dell'agente, 
     perchè non inerenti all'identificazione di un commento spam.
     L'operazione di pulizia si è poi composta delle seguenti fasi: 
+
     \begin{itemize}
         \item {\bfseries Conversione da uppercase a lowercase}, tutte le lettere in maiuscolo sono state convertite in minuscolo;
         \item {\bfseries Rimozione degli invii}, tutti i "break" sono stati rimossi;
         \item {\bfseries Rimozione della punteggiatura}, è stata eliminata ongi forma di punteggiatura;
-        \item {\bfseries Trascrizione dei link}, i link sono stati convertiti in singole parole;
+        \item {\bfseries Trascrizione dei link}, i link sono stati eliminati;
         \item {\bfseries Rimozione degli spazi}, gli spazi consecutivi, ovvero in  quantità maggiore di 1, sono stati rimossi;
         \item {\bfseries Eliminazione lettere ripetute}, lettere identiche, ripetute in quantità maggiore di 2, sono state rimosse;
         \item {\bfseries Correzzione delle parole}, parole non presenti all'interno del vocabolario (scritte quindi in maniera errata oppure in tempi diversi dall'infinito), sono state sottoposte 
@@ -128,32 +143,36 @@
         sono state eliminate;
         \item {\bfseries Eliminazione valori nulli}, tutti i testi che, dopo aver superato questa scrematura, risultavano infine vuoti, sono stati eliminati.
 
+ 
     \end{itemize}
-
-    \begin{figure}
-        \centering
-        \includegraphics[width = 0.9\textwidth]{immagini/datasetPulito.png}
-        \caption{Immagine del dataset dopo le operazioni di pulizia}
-
-    \end{figure}
+    \newpage
+    
+   
 
     \section{Bilanciamento del dataset}
+    
+    
     Questo è il grafico della suddivisione fra spam ed ham nei vari dataset.
-    \begin{figure}
+    \begin{figure}[h]
         \centering
-        \includegraphics[width = 0.9\textwidth]{immagini/DatasetSeparati.png}
+        \includegraphics[width = \textwidth]{immagini/DatasetSeparati.png}
+
     \end{figure}
 
     Questo è il grafico della suddivisione fra spam ed ham in tutti i dataset.
 
-    \begin{figure}[h]
+
+    \begin{figure}[h!]
         \centering
-        \includegraphics[width = 0.9\textwidth]{immagini/DatasetUnico.png}
+        \includegraphics[height = 0.6\textwidth]{immagini/DatasetUnico.png}
     \end{figure}
 
 
-    drgftghgn
+
     \chapter{Creazione agente}
+
+    \section{Scelta del modello}
+    
     Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato, ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
     L'agente dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento. Inizialmente è stato sottoposto all'agente 
     un dataset di commenti, ognuno dei quali era contrassegnato da un target "1", se lo specifico commento era spam, o contrassegnato da target "0" se il commento era ham.
@@ -172,4 +191,19 @@
     \newline
     ovvero, la probabilità che un commento sia spam, è uguale alla probabilità che le parole del commento compaiano in un commento spam, dato che è spam, per la probabilità 
     che il commento sia spam, diviso la probabilità che queste parole compaiano nel commento.
+
+
+    \section{Addestramento}
+
+    \section{Testing}
+
+
+    \chapter{Esecuzione agente}
+
+    \section{Prelevamento istanze}
+
+    \section{Risultati finali}
+
+
+
 \end{document}

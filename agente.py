@@ -6,6 +6,7 @@ import pandas as pd
 import re
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
+from joblib import dump, load
 """
 import socket
 
@@ -45,10 +46,20 @@ print(X)
 
 contenutoAdd, contenutoTest, tagAdd, tagTest = train_test_split(X, colEtichetta, test_size=0.30, random_state=42) #splittiamo il dataset in 4 parti: la colonna contenente il contenuto dei commenti è diviso nella parte di training e di addestramento, e la colonna delle etichette dei commenti è divisa in parte training ed in parte test
 
-instance = MultinomialNB() #restituisce un'istanza dell'algoritmo da utilizzare
-instance.fit(contenutoAdd,tagAdd) #addestriamo il nostro agente intelligente
+agente = MultinomialNB() #restituisce un'istanza dell'algoritmo da utilizzare
+agente.fit(contenutoAdd,tagAdd) #addestriamo il nostro agente intelligente
 
-print("Accuracy of Model",instance.score(contenutoTest,tagTest)*100,"%") #testiamo l'algoritmo
+print("Accuracy of Model",agente.score(contenutoTest,tagTest)*100,"%") #testiamo l'algoritmo
+dump(agente, "fileJOBLIB/fileAgente.joblib"); #così salviamo il nostro agente in un file a parte
+dump(cv, "fileJOBLIB/dizionario.joblib"); #così salviamo il nostro dizionario in un file a parte
+
+
+
+
+
+
+
+
 
 
 

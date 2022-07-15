@@ -214,13 +214,7 @@ plt.yticks([r + barWidth for r in range(len(ACCURATEZZA))],
 plt.legend()
 plt.show()
 
-wordcloud1 = WordCloud(width=800, height=500, margin=10, random_state=3, collocations=True).generate(' '.join(word_text))
 
-plt.figure(figsize=(15,8))
-    plt.imshow(wordcloud1, interpolation="bilinear")
-    plt.axis("off")
-    plt.show()
-    word_text=[]
 
 
 

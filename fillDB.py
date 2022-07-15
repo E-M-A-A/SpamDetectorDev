@@ -25,7 +25,6 @@ def get_users():
     sql = "SELECT username FROM utente WHERE password='Pippo.123';"
     mycursor.execute(sql)
     utenti = mycursor.fetchall()
-    #print(utenti)
     users = []
     for u in utenti:
         users.append(u[0])
@@ -36,7 +35,6 @@ def get_stories():
     sql = "SELECT MAX(id) FROM storia;"
     mycursor.execute(sql)
     storie = mycursor.fetchone()
-    #print(storie[0])
     return storie[0]
 
 
@@ -68,12 +66,3 @@ def fill_comments(contenuto):
 #        continue
 #    fill_comments(commenti[i])
 
-
-# commenti = comments["CONTENT"].apply(cleanFun.word_correction) \
-#    .apply(cleanFun.break_remover) \
-#    .apply(cleanFun.spaces_remover) \
-#    .apply(cleanFun.punt_remover) \
-#    .apply(cleanFun.lower_converter) \
-#    .apply(cleanFun.correct_words) \
-#    .apply(cleanFun.lemmatizer) \
-#    .apply(cleanFun.stopwords_remover)

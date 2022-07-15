@@ -1,14 +1,7 @@
 import concurrent.futures
 import json
-import time
-
-from sklearn.feature_extraction.text import CountVectorizer
-import nltk
 import pandas as pd
-import re
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.model_selection import train_test_split
-from joblib import dump, load
+from joblib import load
 import socket
 
 import cleanFun
@@ -35,7 +28,7 @@ cv = load("fileJOBLIB/dizionario.joblib")  # ricarichiamo la nostra libreria
 NUMPROCESS = 4
 
 HOST = "localhost"
-PORT = 9998
+PORT = 9999
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 try:
     s.bind((HOST, PORT))
@@ -50,13 +43,14 @@ print(f"Connesso da {addr}")
 while True:
     data = conn.recv(4096)
     print(data)
-    # y = json.loads()
     y = pd.read_json(data.decode("UTF-8"))
     futures = set()
-    results = [None] * (NUMPROCESS + 1)
+    results = [None] * NUMPROCESS
     size = len(y["contenuto"])
     sizeEach = int(size / NUMPROCESS)
-    r = sizeEach % NUMPROCESS
+    r = size % NUMPROCESS
+    if r > 0:
+        results = [None] * (NUMPROCESS+1)
     with concurrent.futures.ProcessPoolExecutor(max_workers=NUMPROCESS) as fut:
         for i in range(NUMPROCESS):
             x = fut.submit(correct, y["contenuto"].iloc[i * sizeEach:i * sizeEach + sizeEach], i)
@@ -72,12 +66,12 @@ while True:
         y["contenuto"]).toarray()  # vettorizziamo il commento da esaminare utilizzando la nostra libreria
     x = agente.predict(vect)  # facciamo eseguire la predizione all'agente
     names = []
+    print("Commenti trovati spam: ")
     for i in range(len(x)):
         if x[i] == 1:
             print(y['contenuto'][i])
             names.append(y["username"][i])
     j = json.dumps(names) + '\n'
-    print("Commenti trovati spami: ", j)
     conn.sendall(j.encode("UTF-8"))
     s.close()
     break

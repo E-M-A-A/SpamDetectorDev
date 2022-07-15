@@ -61,12 +61,12 @@ def fill_comments(contenuto):
 #    fill_users()
 # get_users()
 
-comments = pd.read_csv("Dataset/Youtube02-KatyPerry.csv")
-commenti = comments["CONTENT"]
-for i in range(5):
-    if len(commenti[i]) > 128:
-        continue
-    fill_comments(commenti[i])
+#comments = pd.read_csv("source")
+#commenti = comments["CONTENT"]
+#for i in range(15):
+#    if len(commenti[i]) > 128:
+#        continue
+#    fill_comments(commenti[i])
 
 
 # commenti = comments["CONTENT"].apply(cleanFun.word_correction) \

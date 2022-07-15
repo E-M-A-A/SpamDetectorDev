@@ -1,4 +1,6 @@
+import concurrent.futures
 import json
+import time
 
 from sklearn.feature_extraction.text import CountVectorizer
 import nltk
@@ -11,8 +13,26 @@ import socket
 
 import cleanFun
 
+
+def correct(commenti, n):
+    commenti = commenti \
+        .apply(cleanFun.lower_converter) \
+        .apply(cleanFun.break_remover) \
+        .apply(cleanFun.punt_remover) \
+        .apply(cleanFun.href_remover) \
+        .apply(cleanFun.http_remover) \
+        .apply(cleanFun.spaces_remover) \
+        .apply(cleanFun.correct_words) \
+        .apply(cleanFun.stopwords_remover) \
+        .apply(cleanFun.lemmatizer) \
+        .apply(cleanFun.word_correction)
+    return commenti, n
+
+
 agente = load("fileJOBLIB/fileAgente.joblib")  # ricarichiamo il nostro agente
 cv = load("fileJOBLIB/dizionario.joblib")  # ricarichiamo la nostra libreria
+
+NUMPROCESS = 4
 
 HOST = "localhost"
 PORT = 9998
@@ -32,30 +52,32 @@ while True:
     print(data)
     # y = json.loads()
     y = pd.read_json(data.decode("UTF-8"))
-    y["contenuto"] = y["contenuto"] \
-        .apply(cleanFun.lower_converter) \
-        .apply(cleanFun.break_remover) \
-        .apply(cleanFun.punt_remover) \
-        .apply(cleanFun.href_remover) \
-        .apply(cleanFun.http_remover) \
-        .apply(cleanFun.spaces_remover) \
-        .apply(cleanFun.correct_words) \
-        .apply(cleanFun.stopwords_remover) \
-        .apply(cleanFun.lemmatizer) \
-        .apply(cleanFun.word_correction)
-
+    futures = set()
+    results = [None] * (NUMPROCESS + 1)
+    size = len(y["contenuto"])
+    sizeEach = int(size / NUMPROCESS)
+    r = sizeEach % NUMPROCESS
+    with concurrent.futures.ProcessPoolExecutor(max_workers=NUMPROCESS) as fut:
+        for i in range(NUMPROCESS):
+            x = fut.submit(correct, y["contenuto"].iloc[i * sizeEach:i * sizeEach + sizeEach], i)
+            futures.add(x)
+        for future in concurrent.futures.as_completed(futures):
+            res, index = future.result()
+            results[index] = res
+    if r > 0:
+        results[NUMPROCESS], i = correct(y["contenuto"].iloc[NUMPROCESS * sizeEach:NUMPROCESS * sizeEach + r],
+                                         NUMPROCESS)
+    y["contenuto"] = pd.concat(results)
     vect = cv.transform(
         y["contenuto"]).toarray()  # vettorizziamo il commento da esaminare utilizzando la nostra libreria
     x = agente.predict(vect)  # facciamo eseguire la predizione all'agente
-    print(x)
     names = []
     for i in range(len(x)):
         if x[i] == 1:
-            print()
+            print(y['contenuto'][i])
             names.append(y["username"][i])
     j = json.dumps(names) + '\n'
-    print(j)
-    print(j.encode("UTF-8"))
+    print("Commenti trovati spami: ", j)
     conn.sendall(j.encode("UTF-8"))
     s.close()
     break

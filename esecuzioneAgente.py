@@ -27,6 +27,10 @@ cv = load("fileJOBLIB/dizionario.joblib")  # ricarichiamo la nostra libreria
 
 NUMPROCESS = 4
 
+# Comunicazioone con un client attraverso una socket. Riceve dei dati in formato json e li converte in un DataFrame
+# panda. I dati vengono poi puliti tra più processi per velocizzarne l'esecuzione e i risultati vengono concatenati.
+# Per ogni commento trovato spam viene aggiunto l'utente che lo ha scritto a un set di utenti da inviare tramite
+# socket per la loro cancellazione
 HOST = "localhost"
 PORT = 9999
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -61,17 +65,17 @@ while True:
     if r > 0:
         results[NUMPROCESS], i = correct(y["contenuto"].iloc[NUMPROCESS * sizeEach:NUMPROCESS * sizeEach + r],
                                          NUMPROCESS)
-    y["contenuto"] = pd.concat(results)
+    y['contenuto'] = pd.concat(results)
     vect = cv.transform(
-        y["contenuto"]).toarray()  # vettorizziamo il commento da esaminare utilizzando la nostra libreria
+        y['contenuto']).toarray()  # vettorizziamo il commento da esaminare utilizzando la nostra libreria
     x = agente.predict(vect)  # facciamo eseguire la predizione all'agente
-    names = []
+    names = set()
     print("Commenti trovati spam: ")
     for i in range(len(x)):
         if x[i] == 1:
-            print(y['contenuto'][i])
-            names.append(y["username"][i])
-    j = json.dumps(names) + '\n'
+            print(y['contenuto'][i], '. scritto da:', y['username'][i])
+            names.add(y['username'][i])
+    j = json.dumps(list(names)) + '\n'
     conn.sendall(j.encode("UTF-8"))
     s.close()
     break

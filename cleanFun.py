@@ -53,9 +53,9 @@ def reduce_lengthening(text):
 def correct_words(text):
     line = took.tokenize(text)
     for i in range(len(line)):
-        #print("accorciando", line[i])
+        # print("accorciando", line[i])
         line[i] = reduce_lengthening(line[i])
-        #print("accorciata", line[i])
+        # print("accorciata", line[i])
 
     return " ".join(line)
 
@@ -63,15 +63,15 @@ def correct_words(text):
 def word_correction(text):
     line = took.tokenize(text)
     for i in range(len(line)):
-       # print("correggendo", line[i])
+        # print("correggendo", line[i])
         sym_spell = SymSpell(max_dictionary_edit_distance=2, prefix_length=7)
         dictionary_path = pkg_resources.resource_filename(
             "symspellpy", "frequency_dictionary_en_82_765.txt"
         )
         sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1)
         suggestions = sym_spell.lookup_compound(line[i], max_edit_distance=2, ignore_non_words=True)
-        line[i] = suggestions[0].term  # Prendiamo la prima che troviamo tra quelle con distanza minima
-        #print("corretta", line[i])
+        line[i] = suggestions[0].term  # Prendiamo la prima/e che troviamo tra quelle con distanza minima
+        # print("corretta", line[i])
     print(line)
     return " ".join(line)
 
@@ -82,9 +82,8 @@ def stopwords_remover(x):  # funzione per la rimozione delle stopwords
     return " ".join(post)
 
 
-def lemmatizer(x):  # funzione per la rimozione delle stopwords
+def lemmatizer(x):  # funzione per la lemmatizzazione delle parole
     x = took.tokenize(x)
     w = [wn.lemmatize(i) for i in x]
 
     return " ".join(w)
-

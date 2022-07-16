@@ -1,20 +1,9 @@
-import nltk
 import pandas as pd
-import re
-
-import pkg_resources
-from nltk.tokenize import TweetTokenizer
-from nltk.corpus import words
-from symspellpy import SymSpell, Verbosity
 
 import cleanFun
 
-nltk.download("stopwords")
-nltk.download('omw-1.4')
-nltk.download('wordnet')
 clean_doc = pd.read_csv('Dataset/Youtube04-Eminem.csv')
 # nome colonna,0 per la riga/1 per la colonna
-
 clean_doc = clean_doc.drop("COMMENT_ID", 1)
 clean_doc = clean_doc.drop("DATE", 1)
 clean_doc = clean_doc.drop("AUTHOR", 1)

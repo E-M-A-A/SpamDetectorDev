@@ -4,7 +4,6 @@ import cleanFun
 
 clean_doc = pd.read_csv('Dataset/Youtube05-Shakira.csv')
 # nome colonna,0 per la riga/1 per la colonna
-
 clean_doc = clean_doc.drop("COMMENT_ID", 1)
 clean_doc = clean_doc.drop("DATE", 1)
 clean_doc = clean_doc.drop("AUTHOR", 1)

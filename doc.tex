@@ -194,47 +194,135 @@ a4paper,
 
 \newpage
     \section{Addestramento}
-    Per l'addestramento visto che si parla di elaborare testo in linguaggio naturale con funzioni matematiche dobbiamo prima di tutto trasformare il testo in numeri su cui possiamo applicare gli algoritmi di addestramento del nostro classificatore. Questo passaggio lo abbiamo effettuato con la cosidetta vettorizzazione.
-    \newline Nel nostro caso vettorizzare ha voluto dire usare la libreria CountVectorizer per tradurre i commenti in vettori di parole singole per poi sostituire le parole con un intero che rappresenta il numero di occorrenze di quella parola nel commento come mostrato nel seguente esempio.
-        \begin{figure}[h]
-            \centering
-            ‘Hello my name is james’\newline ‘james this is my python notebook’\newline ‘james trying to create a big dataset’\newline ‘james of words to try differnt’\newline ‘features of count vectorizer’\newline
-        \end{figure}
-        
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width =\textwidth]{immagini/EsempioCounterVectorizer.png}
-        \end{figure}
-
-    Una volta vettorizzato il dataset, lo abbiamo suddiviso in 2 insiemi uno l'addestramento e un altro per il testing rispettivamente in proporzione 70\% e 30\% del totale.
+    Prima di poter addestrare l'agente, il dataset è stato sottoposto all'operazione di vettorizzazione, che consiste in due fasi:
+    \begin{itemize}
+        \item separazione del materiale testuale in un vettore contenente le singole parole (tokenizzazione);
+        \item traduzione delle parole in numeri, rappresentanti la frequenza della parola all'interno del vettore iniziale.
+    \end{itemize}
+    A questo scopo è stata utilizzata la libreria "CounterVectorizer".
     \newline
-    L'addestramento effettivo è stato effettuato usando i classificatori messi a disposizione dalla libreria Python "scikit-learn" aggiornato all'ultima versione disponibile al tempo di addestramento la 1.1.1.
-    \href{https://scikit-learn.org/stable/modules/naive_bayes.html}{https://scikit-learn.org/stable/modules/naive\textunderscore bayes.html}
-    
-    
+    Una volta terminata questa fase, il dataset è stato suddiviso in 2 insiemi:
+    \begin{itemize}
+        \item {\bfseries Training Set}: la parte del dataset riservata all'addestramento dell'agente. E' stata costituita dal 
+        70\% del dataset totale.
+        \item {\bfseries Testing Set}: la parte del dataset riservata al testing dell'agente. Questo set di tuple è stato 
+        costituito dal 30\% del dataset totale.
+    \end{itemize}
+    L'addestramento è stato effettuato su diversi tipi di classificatori, in modo da poter selezionare il migliore in fase di testing.
+    I vari classificatori sono stati reperiti dalla libreria: \href{https://scikit-learn.org/stable/modules/naive_bayes.html}{https://scikit-learn.org/stable/modules/naive\textunderscore bayes.html}
+    ed è stata utilizzata la versione 1.1.1.
+    Nello specifico, ci si è concentrati principalmente su classificatori Naïve Bayes in quanto la loro applicazione risulta consigliata
+    su decisioni inerenti a brevi testi, in oltre risultano essere molto rapidi sia in fase di addestramento che in fase di esecuzione.
+    Nello specifico sono stati messi a confronto i classificatori:
+    \begin{itemize}
+        \item {\bfseries GaussianNB}
+        \item {\bfseries BernulliNB}
+        \item {\bfseries ComplementNB}
+        \item {\bfseries MultinomialNB}
+    \end{itemize}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width =\textwidth]{immagini/graficoAddestramento.png}
+        \caption{Grafico che rappresenta i tempi di addestramento di diversi algoritmi Naïve Bayes}
+
+    \end{figure}
+
+    In questa fase, il GaussianNB è risultato essere il più lento in fase di addestramento.
+
+
     
     
 \newpage
     \section{Testing}
-    Per il testing abbiamo confrontato diversi classificatori basati su Naïve Bayes per verificarne l'accuratezza delle predizioni, il numero di predizioni corrette in fase di testing e l'effettivo tempo di esecuzione. Come risultato del testing qui mostrato il classificatore migliore è risultato il ComplementNB che ha battuto per poche classificazioni corrette e per pochi millisecondi in meno di esecuzione il MultinomialNB, battendo anche il BernoulliNB che per documentazione di scikit-learn dovrebbe essere migliore per documenti corti.
+    Durante la fase di testing, i vari classificatori selezionati sono stati eseguiti sullo stesso Testing Set.
+    I parametri che hanno influito nella scelta del classificatore da utilizzare sono stati:
+    \begin{itemize}
+        \item {\bfseries precision}, indica la quantità di previsioni corrette rispetto a tutte le istanze che ha classificato come spam;
+        \item {\bfseries recall}, indica quante, fra tutte le istanze spam contenute nel Testing Set, sono state correttamente classificate come spam;
+        \item {\bfseries accuracy}, indica il numero totale di previsioni giuste, fra spam ed ham;
+        \item {\bfseries MCC}, è un coefficiente che si aggira fra 1 e -1. Questo intero rappresenta la media delle precisioni, dove per 1 
+        si intende che il classificatore fa sempre la scelta giusta, mentre per -1 si intende che classifica sempre il contrario della realtà.  
+    \end{itemize}
+
+  
         \begin{figure}[h!]
             \centering
-            \includegraphics[width =\textwidth]{immagini/GraficoVariAlgoritmi.png}
+            \includegraphics[width =\textwidth]{immagini/graficoBuono.png}
+            \caption{Grafico che rappresenta vari parametri di diversi algoritmi Naïve Bayes}
+
         \end{figure}
-    Come test ulteriore per assicurarci di non avere avuto errori di valutazione abbiamo anche effettuato molteplici test modificando il valore intero alla base della randomizzazione del CounterVectorizer per lo split del dataset tra training set e testing set. 
+        Oltre ai parametri sopra elencati, è stato considerato anche il tempo di esecuzione.
+        In questo caso il GaussianNB è risultato essere il più lento ad essere eseguito.
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width =\textwidth]{immagini/graficoEsecuzione.png}
+            \caption{Grafico che rappresenta il tempo di esecuzione sul Testing Set di diversi algoritmi Naïve Bayes}
+
+        \end{figure}
+
+    I vari test sono stati ripetuti anche modificando il Random State: il parametro che permette di ottenere un mescolamento e 
+    un suddivisione tra training e testing set ripetibile nelle varie chiamate.
+    Il valore ottimale del RandomState si è rivelato essere 42.
+    
+
     \begin{figure}[h!]
             \centering
             \includegraphics[width =\textwidth]{immagini/randomState.png}
-        \end{figure}
-    
+            \caption{Immagine di come è stato modificato il Random State in modo da essere ottimizzato}
+
+    \end{figure}
+
+                
+    Come risultato del testing qui mostrato il classificatore migliore è
+    risultato il ComplementNB che ha battuto per poche classificazioni corrette e per pochi millisecondi
+        in meno di esecuzione il MultinomialNB, battendo anche il BernoulliNB che per documentazione 
+        di scikit-learn dovrebbe essere migliore per documenti corti.
+
     \chapter{Esecuzione agente}
-    L'agente essendo addestrato ed eseguito in Python mentre il sito di Storytelling è scritto in Java vuol dire che dobbiamo far comunicare due sistemi diversi con metodi di comunicazione che siano interoperabili tra i 2 linguaggi.\newline Il vantaggio di dover sviluppare un sistema del genere è poi avere la possibilità di rendere facilmente l'agente disponibile per altre piattaforme. 
+    
+    L'agente, per poter essere eseguito, deve essere integrato all'interno della piattaforma Storytelling.
+    I due sistemi dovranno poter comunicare nonostante siano stati formulati in linguaggi diversi.
+    \newline
+    A questo scopo sono state utilizzate delle tecniche che, oltre a essere funzionali per la piattaforma in questione,
+    hanno reso più agevole l'integrazione dell'agente anche in altre piattaforme, scritte in qualsivoglia linguaggio.
 
     \section{Prelevamento istanze}
-    L'agente all'avvio rimane in ascolto su una socket dove attende la richiesta di analisi dei commenti della piattaforma Storytelling. La piattaforma Storytelling ogni 24 ore e/o al proprio avvio manda un JSON contenente i commenti che sono stati postati il giorno corrente associati ai nomi utente di chi li invia per poi rimanere in attesa sulla socket per ricevere i risulati.\newline L'agente ricevuti i commenti, li inserisce in un dataframe generato tramite la libreria Pandas, li pulisce tramite le stesse techiche che sono state applicate al dataset, li vettoriza tramite il dizionario usato durante il training per poi infine analizzarli.\newline Dopo aver analizzato i commenti, l'agente invia sempre in JSON i nomi utente di coloro che sono stati riconosciuti come spammer e chiude la connessione con la piattaforma per poi rimanere in ascolto per la chiamata successiva.
+    Il sistema di comunicazione fra l'agente e la piattaforma, essendo scritte rispettivamente in Python 3.10 ed in Java 15.0.2, è stato 
+    implementato tramite una socket, sulla quale l'agente ogni 24h:
+    \begin{itemize}
+        \item si avvia ad un orario prestabilito;
+        \item rimane in attesa, fino alla ricezione della richiesta di Storytelling;
+        \item riceve dalla socket la lista di commenti da analizzare, in formato JSON, assieme al loro corrispettivo autore;
+        \item li inserisce in un dataframe generato tramite la libreria Pandas ed esegue le operazioni di pulizia, avviandola su processi differenti;
+        \item esegue la classificazione;
+        \item inoltra sulla socket i nominativi degli autori dei commenti che sono stati classificati come spam;
+        \item chiude la socket e si termina la sua esecuzione;
+    \end{itemize}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width =\textwidth]{immagini/puliziaCommenti.png}
+        \caption{Avvio dei diversi processi di pulizia in parallelo}
+
+    \end{figure}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width =\textwidth]{immagini/socket.png}
+        \caption{Immagine di come è stata implementata la comunicazione}
+
+    \end{figure}
     
     \section{Risultati finali}
     L'agente in campo risulta che performa con una buona precisione ma comunque 
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width =\textwidth]{immagini/commentiSpam.png}
+        \caption{Immagine di come è stato modificato il Random State in modo da essere ottimizzato}
+
+\end{figure}
 
 
 

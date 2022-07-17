@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  14 JUL 2022 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  18 JUL 2022 01:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -430,25 +430,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--188
 [7
 
 ]
-Chapter 5.
-[8
+Overfull \hbox (31.97717pt too wide) in paragraph at lines 211--217
+\OT1/cmr/m/n/10 di test-ing. I vari clas-si-fi-ca-tori sono stati reper-iti dalla li-bre-ria: []https://scikit-learn.org/stable/modules/naive[]bayes.html[]
+ []
 
-] (doc.aux)
+<immagini/graficoAddestramento.png, id=138, 987.2082pt x 479.1501pt>
+File: immagini/graficoAddestramento.png Graphic file (type png)
+<use immagini/graficoAddestramento.png>
+Package pdftex.def Info: immagini/graficoAddestramento.png  used on input line 226.
+(pdftex.def)             Requested size: 483.69684pt x 234.76367pt.
+[8 <./immagini/graficoAddestramento.png>]
+<immagini/graficoBuono.png, id=145, 1387.584pt x 711.1368pt>
+File: immagini/graficoBuono.png Graphic file (type png)
+<use immagini/graficoBuono.png>
+Package pdftex.def Info: immagini/graficoBuono.png  used on input line 251.
+(pdftex.def)             Requested size: 483.69684pt x 247.89246pt.
+<immagini/graficoEsecuzione.png, id=146, 987.2082pt x 479.1501pt>
+File: immagini/graficoEsecuzione.png Graphic file (type png)
+<use immagini/graficoEsecuzione.png>
+Package pdftex.def Info: immagini/graficoEsecuzione.png  used on input line 259.
+(pdftex.def)             Requested size: 483.69684pt x 234.76367pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<immagini/randomState.png, id=147, 927.465pt x 50.1875pt>
+File: immagini/randomState.png Graphic file (type png)
+<use immagini/randomState.png>
+Package pdftex.def Info: immagini/randomState.png  used on input line 271.
+(pdftex.def)             Requested size: 483.69684pt x 26.17421pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9 <./immagini/graficoBuono.png>] [10 <./immagini/graficoEsecuzione.png> <./immagini/randomState.png>]
+Chapter 5.
+<immagini/puliziaCommenti.png, id=162, 297.36093pt x 55.70813pt>
+File: immagini/puliziaCommenti.png Graphic file (type png)
+<use immagini/puliziaCommenti.png>
+Package pdftex.def Info: immagini/puliziaCommenti.png  used on input line 305.
+(pdftex.def)             Requested size: 483.69684pt x 90.6215pt.
+<immagini/socket.png, id=163, 232.61906pt x 164.11313pt>
+File: immagini/socket.png Graphic file (type png)
+<use immagini/socket.png>
+Package pdftex.def Info: immagini/socket.png  used on input line 312.
+(pdftex.def)             Requested size: 483.69684pt x 341.28462pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<immagini/commentiSpam.png, id=164, 837.1275pt x 99.37125pt>
+File: immagini/commentiSpam.png Graphic file (type png)
+<use immagini/commentiSpam.png>
+Package pdftex.def Info: immagini/commentiSpam.png  used on input line 322.
+(pdftex.def)             Requested size: 483.69684pt x 57.417pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11
+
+ <./immagini/puliziaCommenti.png (PNG copy)>] [12 <./immagini/socket.png (PNG copy)> <./immagini/commentiSpam.png (PNG copy)>] (doc.aux)
 Package rerunfilecheck Info: File `doc.out' has not changed.
 (rerunfilecheck)             Checksum: FE6CC6BBFAB8D6ECA59D5C8860E490D5;2168.
  ) 
 Here is how much of TeX's memory you used:
- 10987 strings out of 478582
- 178583 string characters out of 2841005
- 471922 words of memory out of 3000000
- 29012 multiletter control sequences out of 15000+600000
+ 11048 strings out of 478582
+ 180174 string characters out of 2841005
+ 471924 words of memory out of 3000000
+ 29055 multiletter control sequences out of 15000+600000
  476224 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,7n,79p,420b,368s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Muriel Rossi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on doc.pdf (9 pages, 264930 bytes).
+Output written on doc.pdf (13 pages, 387145 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 243 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 

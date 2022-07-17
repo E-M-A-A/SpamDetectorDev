@@ -111,9 +111,10 @@ fig = plt.subplots(figsize=(15, 8))
 # set height of bar
 ACCURATEZZA = [accuratezza, accuratezza1, accuratezza2, accuratezza3]
 CORRETTE = [corrette, corrette1, corrette2, corrette3]
-RECALL = [recall, recall1, recall2, recall3]
-MCC = [mcc, mcc1, mcc2, mcc3]
-PRECISION = [precision, precision1, precision2, precision3]
+RECALL = [recall* 100, recall1* 100, recall2* 100, recall3* 100]
+MCC = [mcc* 100, mcc1* 100, mcc2* 100, mcc3* 100]
+PRECISION = [precision* 100, precision1* 100, precision2* 100, precision3* 100]
+ZERI = [5, 5, 5, 5]
 # Set position of bar on X axis
 br1 = np.arange(len(ACCURATEZZA))
 br2 = [x + barWidth for x in br1]
@@ -141,6 +142,34 @@ plt.barh(br1, TEMPOT, color='c', height=barWidth,
          edgecolor='black', label='TEMPO DI TESTING(ms)')
 plt.barh(br2, TEMPOA, color='r', height=barWidth,
          edgecolor='black', label='TEMPO DI ADDESTRAMENTO(ms)')
+# Adding Xticks
+plt.xlabel('', fontweight='bold', fontsize=15)
+plt.ylabel('', fontweight='bold', fontsize=15)
+plt.yticks([r + barWidth for r in range(len(TEMPOT))],
+           ['MultinomialNB', 'ComplementNB', 'BernoulliNB', 'GaussianNB'])
+
+plt.legend()
+plt.show()
+
+
+br1 = np.arange(len(TEMPOT))
+br2 = [x + barWidth for x in br1]
+br3 = [x + barWidth for x in br2]
+br4 = [x + barWidth for x in br3]
+br5 = [x + barWidth for x in br1]
+
+
+plt.barh(br1, PRECISION, color='c', height=barWidth,
+         edgecolor='black', label='PRECISION')
+plt.barh(br5, ZERI, color='w', height=barWidth,
+         edgecolor='pink', label='ZERI')
+plt.barh(br2, RECALL, color='g', height=barWidth,
+         edgecolor='black', label='RECALL')
+plt.barh(br3, MCC, color='r', height=barWidth,
+         edgecolor='black', label='MCC')
+plt.barh(br4, ACCURATEZZA, color='m', height=barWidth,
+         edgecolor='black', label='ACCURATEZZA')
+
 # Adding Xticks
 plt.xlabel('', fontweight='bold', fontsize=15)
 plt.ylabel('', fontweight='bold', fontsize=15)

@@ -2,7 +2,7 @@ import pandas as pd
 
 import cleanFun
 
-clean_doc = pd.read_csv('Dataset/Youtube04-Eminem.csv')
+clean_doc = pd.read_csv('Dataset/Youtube03-LMFAO.csv')
 # nome colonna,0 per la riga/1 per la colonna
 clean_doc = clean_doc.drop("COMMENT_ID", 1)
 clean_doc = clean_doc.drop("DATE", 1)
@@ -20,5 +20,4 @@ clean_doc["CONTENT"] = clean_doc["CONTENT"]\
     .apply(cleanFun.lemmatizer) \
     .apply(cleanFun.word_correction)
 
-clean_doc.to_csv('Dataset/DatasetCleanYoutube04-Eminem.csv')
-
+clean_doc.to_csv('Dataset/DatasetCleanYoutube03-LMFAO.csv')

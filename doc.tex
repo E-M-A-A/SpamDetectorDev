@@ -132,12 +132,12 @@ a4paper,
     \begin{itemize}
         \item {\bfseries Conversione da uppercase a lowercase}, tutte le lettere in maiuscolo sono state convertite in minuscolo;
         \item {\bfseries Rimozione degli invii}, tutti i "break" sono stati rimossi;
-        \item {\bfseries Rimozione della punteggiatura}, è stata eliminata ongi forma di punteggiatura;
+        \item {\bfseries Rimozione della punteggiatura}, è stata eliminata ogni forma di punteggiatura;
         \item {\bfseries Trascrizione dei link}, i link sono stati eliminati;
         \item {\bfseries Rimozione degli spazi}, gli spazi consecutivi, ovvero in  quantità maggiore di 1, sono stati rimossi;
         \item {\bfseries Eliminazione lettere ripetute}, lettere identiche, ripetute in quantità maggiore di 2, sono state rimosse;
-        \item {\bfseries Correzzione delle parole}, parole non presenti all'interno del vocabolario (scritte quindi in maniera errata oppure in tempi diversi dall'infinito), sono state sottoposte 
-        ad un'algoritmo di pattern matching. La funzione nello specifico, cerca inizialmente il match con parole di uso più comune. Il caso in cui
+        \item {\bfseries Correzione delle parole}, parole non presenti all'interno del vocabolario inglese di Word Reference (scritte quindi in maniera errata oppure in tempi diversi dall'infinito), sono state sottoposte 
+        ad un algoritmo di pattern matching. La funzione nello specifico, cerca inizialmente il match con parole di uso più comune. Il caso in cui
         la parola presenti più matches, viene scelta la prima parola ad essere stata individuata;
         \item {\bfseries Eliminazione delle "stopwords"}, tutte le parole che rientravano nel dizionario delle stopwords (ovvero parole che non aggiungono alcuna informazione) 
         sono state eliminate;
@@ -175,7 +175,7 @@ a4paper,
     
     Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato, ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
     L'agente dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento. Inizialmente è stato sottoposto all'agente 
-    un dataset di commenti, ognuno dei quali era contrassegnato da un target "1", se lo specifico commento era spam, o contrassegnato da target "0" se il commento era ham.
+    un dataset di commenti, ognuno dei quali è contrassegnato da un intero che rappresenta la classe a cui appartiene l'elemento "1", se lo specifico commento è, o contrassegnato da classe "0" se il commento è ham.
     E' quindi stata creata una tabella dove venivano individuate, per ciascun commento,
     la frequenza con la quale alcune parole ricorrevano. In questo caso ci è venuto in aiuto l'algoritmo {\bfseries Naive Bayes}:
     \newline
@@ -192,17 +192,49 @@ a4paper,
     ovvero, la probabilità che un commento sia spam, è uguale alla probabilità che le parole del commento compaiano in un commento spam, dato che è spam, per la probabilità 
     che il commento sia spam, diviso la probabilità che queste parole compaiano nel commento.
 
-
+\newpage
     \section{Addestramento}
+    Per l'addestramento visto che si parla di elaborare testo in linguaggio naturale con funzioni matematiche dobbiamo prima di tutto trasformare il testo in numeri su cui possiamo applicare gli algoritmi di addestramento del nostro classificatore. Questo passaggio lo abbiamo effettuato con la cosidetta vettorizzazione.
+    \newline Nel nostro caso vettorizzare ha voluto dire usare la libreria CountVectorizer per tradurre i commenti in vettori di parole singole per poi sostituire le parole con un intero che rappresenta il numero di occorrenze di quella parola nel commento come mostrato nel seguente esempio.
+        \begin{figure}[h]
+            \centering
+            ‘Hello my name is james’\newline ‘james this is my python notebook’\newline ‘james trying to create a big dataset’\newline ‘james of words to try differnt’\newline ‘features of count vectorizer’\newline
+        \end{figure}
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width =\textwidth]{immagini/EsempioCounterVectorizer.png}
+        \end{figure}
 
+    Una volta vettorizzato il dataset, lo abbiamo suddiviso in 2 insiemi uno l'addestramento e un altro per il testing rispettivamente in proporzione 70\% e 30\% del totale.
+    \newline
+    L'addestramento effettivo è stato effettuato usando i classificatori messi a disposizione dalla libreria Python "scikit-learn" aggiornato all'ultima versione disponibile al tempo di addestramento la 1.1.1.
+    \href{https://scikit-learn.org/stable/modules/naive_bayes.html}{https://scikit-learn.org/stable/modules/naive\textunderscore bayes.html}
+    
+    
+    
+    
+\newpage
     \section{Testing}
-
-
+    Per il testing abbiamo confrontato diversi classificatori basati su Naïve Bayes per verificarne l'accuratezza delle predizioni, il numero di predizioni corrette in fase di testing e l'effettivo tempo di esecuzione. Come risultato del testing qui mostrato il classificatore migliore è risultato il ComplementNB che ha battuto per poche classificazioni corrette e per pochi millisecondi in meno di esecuzione il MultinomialNB, battendo anche il BernoulliNB che per documentazione di scikit-learn dovrebbe essere migliore per documenti corti.
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width =\textwidth]{immagini/GraficoVariAlgoritmi.png}
+        \end{figure}
+    Come test ulteriore per assicurarci di non avere avuto errori di valutazione abbiamo anche effettuato molteplici test modificando il valore intero alla base della randomizzazione del CounterVectorizer per lo split del dataset tra training set e testing set. 
+    \begin{figure}[h!]
+            \centering
+            \includegraphics[width =\textwidth]{immagini/randomState.png}
+        \end{figure}
+    
     \chapter{Esecuzione agente}
+    L'agente essendo addestrato ed eseguito in Python mentre il sito di Storytelling è scritto in Java vuol dire che dobbiamo far comunicare due sistemi diversi con metodi di comunicazione che siano interoperabili tra i 2 linguaggi.\newline Il vantaggio di dover sviluppare un sistema del genere è poi avere la possibilità di rendere facilmente l'agente disponibile per altre piattaforme. 
 
     \section{Prelevamento istanze}
-
+    L'agente all'avvio rimane in ascolto su una socket dove attende la richiesta di analisi dei commenti della piattaforma Storytelling. La piattaforma Storytelling ogni 24 ore e/o al proprio avvio manda un JSON contenente i commenti che sono stati postati il giorno corrente associati ai nomi utente di chi li invia per poi rimanere in attesa sulla socket per ricevere i risulati.\newline L'agente ricevuti i commenti, li inserisce in un dataframe generato tramite la libreria Pandas, li pulisce tramite le stesse techiche che sono state applicate al dataset, li vettoriza tramite il dizionario usato durante il training per poi infine analizzarli.\newline Dopo aver analizzato i commenti, l'agente invia sempre in JSON i nomi utente di coloro che sono stati riconosciuti come spammer e chiude la connessione con la piattaforma per poi rimanere in ascolto per la chiamata successiva.
+    
     \section{Risultati finali}
+    L'agente in campo risulta che performa con una buona precisione ma comunque 
 
 
 

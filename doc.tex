@@ -192,10 +192,20 @@ a4paper,
     ovvero, la probabilità che un commento sia spam, è uguale alla probabilità che le parole del commento compaiano in un commento spam, dato che è spam, per la probabilità 
     che il commento sia spam, diviso la probabilità che queste parole compaiano nel commento.
 
-
+\newpage
     \section{Addestramento}
-    Per l'addestramento abbiamo prima di tutto trasformato il testo del nostro dataset in vettori usando la libreria CountVectorizer convertendo le stringhe in vettori di interi i quali in base alla posizione nel vettore rappresentano la frequenza di una parola definita dal dizionario della libreria.
-    Non abbiamo fatto ulteriori operazioni per bilanciare il dati di addestramento essendo superflui visto le condizioni di partenza del dataset.
+    Per l'addestramento visto che si parla di elaborare testo in linguaggio naturale con funzioni matematiche dobbiamo prima di tutto trasformare il testo in numeri su cui possiamo applicare gli algoritmi di addestramento del nostro classificatore. Questo passaggio lo abbiamo effettuato con la cosidetta vettorizzazione.
+    \newline Nel nostro caso vettorizzare ha voluto dire usare la libreria CountVectorizer per tradurre i commenti in vettori di parole singole per poi sostituire le parole con un intero che rappresenta il numero di occorrenze di quella parola nel commento come mostrato nel seguente esempio.
+        \begin{figure}[h]
+            \centering
+            ‘Hello my name is james’\newline ‘james this is my python notebook’\newline ‘james trying to create a big dataset’\newline ‘james of words to try differnt’\newline ‘features of count vectorizer’\newline
+        \end{figure}
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width =\textwidth]{immagini/EsempioCounterVectorizer.png}
+        \end{figure}
+
     Una volta vettorizzato il dataset, lo abbiamo suddiviso in 2 insiemi uno l'addestramento e un altro per il testing rispettivamente in proporzione 70\% e 30\% del totale.
     \newline
     L'addestramento effettivo è stato effettuato usando i classificatori messi a disposizione dalla libreria Python "scikit-learn" aggiornato all'ultima versione disponibile al tempo di addestramento la 1.1.1.
@@ -206,7 +216,7 @@ a4paper,
     
 \newpage
     \section{Testing}
-    Per il testing abbiamo confrontato diversi classificatori basati su Naïve Bayes per verificarne l'accuratezza delle predizioni e il numero di predizioni corrette in fase di testing e l'effettivo tempo di esecuzione. Come risultato del testing qui mostrato il classificatore migliore è risultato il ComplementNB che ha battuto per poche classificazioni corrette e per pochi millisecondi in meno di esecuzione il MultinomialNB, battendo anche il BernoulliNB che per documentazione di scikit-learn dovrebbe essere migliore per documenti corti.
+    Per il testing abbiamo confrontato diversi classificatori basati su Naïve Bayes per verificarne l'accuratezza delle predizioni, il numero di predizioni corrette in fase di testing e l'effettivo tempo di esecuzione. Come risultato del testing qui mostrato il classificatore migliore è risultato il ComplementNB che ha battuto per poche classificazioni corrette e per pochi millisecondi in meno di esecuzione il MultinomialNB, battendo anche il BernoulliNB che per documentazione di scikit-learn dovrebbe essere migliore per documenti corti.
         \begin{figure}[h!]
             \centering
             \includegraphics[width =\textwidth]{immagini/GraficoVariAlgoritmi.png}
@@ -218,10 +228,13 @@ a4paper,
         \end{figure}
     
     \chapter{Esecuzione agente}
+    L'agente essendo addestrato ed eseguito in Python mentre il sito di Storytelling è scritto in Java vuol dire che dobbiamo far comunicare due sistemi diversi con metodi di comunicazione che siano interoperabili tra i 2 linguaggi.\newline Il vantaggio di dover sviluppare un sistema del genere è poi avere la possibilità di rendere facilmente l'agente disponibile per altre piattaforme. 
 
     \section{Prelevamento istanze}
-
+    L'agente all'avvio rimane in ascolto su una socket dove attende la richiesta di analisi dei commenti della piattaforma Storytelling. La piattaforma Storytelling ogni 24 ore e/o al proprio avvio manda un JSON contenente i commenti che sono stati postati il giorno corrente associati ai nomi utente di chi li invia per poi rimanere in attesa sulla socket per ricevere i risulati.\newline L'agente ricevuti i commenti, li inserisce in un dataframe generato tramite la libreria Pandas, li pulisce tramite le stesse techiche che sono state applicate al dataset, li vettoriza tramite il dizionario usato durante il training per poi infine analizzarli.\newline Dopo aver analizzato i commenti, l'agente invia sempre in JSON i nomi utente di coloro che sono stati riconosciuti come spammer e chiude la connessione con la piattaforma per poi rimanere in ascolto per la chiamata successiva.
+    
     \section{Risultati finali}
+    L'agente in campo risulta che performa con una buona precisione ma comunque 
 
 
 

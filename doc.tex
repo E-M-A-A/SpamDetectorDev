@@ -170,29 +170,6 @@ a4paper,
 
 
     \chapter{Creazione agente}
-
-    \section{Scelta del modello}
-    
-    Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato, ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
-    L'agente dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento. Inizialmente è stato sottoposto all'agente 
-    un dataset di commenti, ognuno dei quali è contrassegnato da un intero che rappresenta la classe a cui appartiene l'elemento "1", se lo specifico commento è, o contrassegnato da classe "0" se il commento è ham.
-    E' quindi stata creata una tabella dove venivano individuate, per ciascun commento,
-    la frequenza con la quale alcune parole ricorrevano. In questo caso ci è venuto in aiuto l'algoritmo {\bfseries Naive Bayes}:
-    \newline
-    \begin{equation}\label{bho}
-        { p(B|A)  p(A)\over p(B)}
-    \end{equation}
-    \newline
-    che, nel nostro caso, si traduce in:
-    \newline
-    \begin{equation}\label{bho2}
-        p(spam|commento) = { p(commento|spam)  p(spam)\over p(commento)}
-    \end{equation}
-    \newline
-    ovvero, la probabilità che un commento sia spam, è uguale alla probabilità che le parole del commento compaiano in un commento spam, dato che è spam, per la probabilità 
-    che il commento sia spam, diviso la probabilità che queste parole compaiano nel commento.
-
-\newpage
     \section{Addestramento}
     Prima di poter addestrare l'agente, il dataset è stato sottoposto all'operazione di vettorizzazione, che consiste in due fasi:
     \begin{itemize}
@@ -274,10 +251,34 @@ a4paper,
     \end{figure}
 
                 
-    Come risultato del testing qui mostrato il classificatore migliore è
+    In base ai vari parametri mostrati in precedenza, è stato scelto di adottare il ComplementNB come modello per l'agente.
     risultato il ComplementNB che ha battuto per poche classificazioni corrette e per pochi millisecondi
         in meno di esecuzione il MultinomialNB, battendo anche il BernoulliNB che per documentazione 
         di scikit-learn dovrebbe essere migliore per documenti corti.
+
+    
+        \section{Scelta del modello}
+    
+        Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato, ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
+        L'agente dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento. Inizialmente è stato sottoposto all'agente 
+        un dataset di commenti, ognuno dei quali è contrassegnato da un intero che rappresenta la classe a cui appartiene l'elemento "1", se lo specifico commento è, o contrassegnato da classe "0" se il commento è ham.
+        E' quindi stata creata una tabella dove venivano individuate, per ciascun commento,
+        la frequenza con la quale alcune parole ricorrevano. In questo caso ci è venuto in aiuto l'algoritmo {\bfseries Naive Bayes}:
+        \newline
+        \begin{equation}\label{bho}
+            { p(B|A)  p(A)\over p(B)}
+        \end{equation}
+        \newline
+        che, nel nostro caso, si traduce in:
+        \newline
+        \begin{equation}\label{bho2}
+            p(spam|commento) = { p(commento|spam)  p(spam)\over p(commento)}
+        \end{equation}
+        \newline
+        ovvero, la probabilità che un commento sia spam, è uguale alla probabilità che le parole del commento compaiano in un commento spam, dato che è spam, per la probabilità 
+        che il commento sia spam, diviso la probabilità che queste parole compaiano nel commento.
+    
+    
 
     \chapter{Esecuzione agente}
     

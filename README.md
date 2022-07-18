@@ -6,7 +6,7 @@ Questi vengono individuati sulla base dell'analisi del testo dei commenti relati
 In caso di segnalazione di un utente spammer, la piattaforma Storytelling provvederà ad eliminarlo, assieme
 a tutte le sue apparizioni all'interno del social.
 
-###Nello specifico, la repository contiene:
+##Nello specifico, la repository contiene:
 - la documentazione del progetto, che descrive le fasi in cui è stato realizzato (doc.tex)
 - file contenente i metodi per effettuare la pulizia dei dati (cleanfun.py)
 - file contenente la realizzazione dell'agente (agente.py)

@@ -16,4 +16,8 @@ Nello specifico, la repository contiene:
 - file per popolare la piattaforma Storytelling (fillDB.py)
 - file per il compattamento del dataset (compactor.py)
 
+## Autori
+Coppola Emmanuele Virginio-[EmmanuelEngineer](https://github.com/EmmanuelEngineer)
+Marigliano Alessandro-[AleMarigliano16](https://github.com/AleMarigliano16)
+Rossi Muriel-[MurielRossi](https://github.com/MurielRossi)
 

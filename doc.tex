@@ -20,7 +20,7 @@ a4paper,
 \usepackage[Glenn]{fncychap}
 \title{Storytelling} % Sets article title
 \author{Emmanuele Virginio Coppola, Muriel Rossi, Alessandro Marigliano} % Sets authors name
-
+\date{17/07/2022}
 \begin{document} % All begin commands must be paired with an end command somewhere 
     \maketitle % creates title using information in preamble (title, author, date)  $\downarrow$   \date{\today} % Sets date for date compiled
 
@@ -30,7 +30,7 @@ a4paper,
     La pubblicità invasiva si rivela essere sempre maggiormente un problema asfissiante all'interno del mondo dei socialnetwork. Nonostante siano state sviluppate diverse tecniche
     allo scopo di domare questa piaga, alcune inserzioni riescono tuttavia a sfuggirne, intasando interfacce dedicate all'informazione ed 
     all'intrattenimento, che subiscono così una svalutazione, venendo "soffocate".
-    
+    \newline
 
     \textbf{Legge di Reed: il valore di una rete sociale è direttamente proporzionale ad una funzione esponenziale in N:}
     \begin{equation} % Creates an equation environment and is compiled as math
@@ -99,7 +99,7 @@ a4paper,
     Consiste in un insieme di tuple presentanti le colonne:
     \begin{itemize}
 
-        \item "COMMENT\textunderscore ID"
+        \item "COMMENT\textunderscore ID", l'ID del commento
 
         \item "AUTHOR", l'autore
         \item "DATE", la data in cui è stato pubblicato
@@ -151,25 +151,62 @@ a4paper,
 
     \section{Bilanciamento del dataset}
     
+    Il datast, prima di poter essere sottoposto all'agente per l'addestramento, deve risultare bilanciato,
+    altrimenti si rischia di incorrere in errate valutazioni da parte dell'agente (le minoranze risulterebbero sfavorite).
+    \newline
+    Il bilanciamento di un dataset si verifica quando il numero delle istanze appartenenti alle varie classi si equivale.
+    Per verificare se il dataset preso d'esame risultasse bilanciato, sono state contate il numero di istanze appartenenti 
+    alla classe "spam" e quelle appartenenti alla classe "ham", per ogni pezzo componente il dataset (ovvero le query di 
+    commenti pubblicate sotto ogni videoclip) e successivamente sono state visualizzate su un grafico.
     
-    Questo è il grafico della suddivisione fra spam ed ham nei vari dataset.
     \begin{figure}[h]
         \centering
         \includegraphics[width = \textwidth]{immagini/DatasetSeparati.png}
+        \caption{Questo è il grafico della suddivisione fra spam ed ham nei vari dataset.}
 
     \end{figure}
+    
 
-    Questo è il grafico della suddivisione fra spam ed ham in tutti i dataset.
-
-
+   Nonostante per ogni videoclip, il numero di commenti spam ed ham tendevano ad equivalersi, si è preferito visualizzare
+   anche la suddivisione del dataset nel suo totale.
+    \newpage
     \begin{figure}[h!]
         \centering
         \includegraphics[height = 0.6\textwidth]{immagini/DatasetUnico.png}
+        \caption{Questo è il grafico della suddivisione fra spam ed ham in tutti i dataset.}
     \end{figure}
 
-
+    Si è quindi deciso di non procedere ad alcuna operazione di bilanciamento in quanto il dataset 
+    risultava essere già di per se estremamente bilanciato.
 
     \chapter{Creazione agente}
+
+
+    Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
+    Dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento.
+    E' evidente che, dovendo etichettare in una classe o nell'altra una certa istanza, il modello dell'agente debba essere scelto fra i classificatori. 
+    Inizialmente all'agente è stato sottoposto 
+    un dataset di commenti, ognuno dei quali contrassegnato da un intero, rappresentante la classe a cui appartiene l'elemento: "1", se lo specifico commento è spam, "0" se il commento è ham.
+    E' quindi stata creata una tabella dove venivano individuate, per ciascun commento,
+    la frequenza con la quale alcune parole ricorrevano. In questo caso ci è venuta in aiuto la formula di Bayes:
+    \newline
+    \begin{equation}\label{bho}
+        { p(B|A)  p(A)\over p(B)}
+    \end{equation}
+    \newline
+    che, nel nostro caso, si traduce in:
+    \newline
+    \begin{equation}\label{bho2}
+        p(spam|commento) = { p(commento|spam)  p(spam)\over p(commento)}
+    \end{equation}
+    \newline
+    ovvero, la probabilità che un commento sia spam, è uguale alla probabilità che le parole del commento compaiano in un commento spam, dato che è spam, per la probabilità 
+    che il commento sia spam, diviso la probabilità che queste parole compaiano nel commento.
+
+    Si basano su questa formula tutta una famiglia di classificatori, detti classificatori "Naive Bayes" (Naive perchè assumono che ogni parola sia scritta in modo indipendente dalle altre).
+    Si è deciso di concentrarsi su questa tipologia di algoritmi, effettuando diversi test per sceglierne il migliore.
+
+
     \section{Addestramento}
     Prima di poter addestrare l'agente, il dataset è stato sottoposto all'operazione di vettorizzazione, che consiste in due fasi:
     \begin{itemize}
@@ -252,36 +289,24 @@ a4paper,
 
     \end{figure}
 
-                
     In base ai vari parametri mostrati in precedenza, è stato scelto di adottare il ComplementNB come modello per l'agente.
-    risultato il ComplementNB che ha battuto per poche classificazioni corrette e per pochi millisecondi
-        in meno di esecuzione il MultinomialNB, battendo anche il BernoulliNB che per documentazione 
-        di scikit-learn dovrebbe essere migliore per documenti corti.
-
+   
+    \newpage
+    \section{Scelta del modello}
+    Il ComplementNB è un tipo di algoritmo che si è dimostrato essere particolarmente preciso ed accurato.
+    Come tutti i Naive Bayes si basa sulla formula di Bayes dellaprobabilità condizionata.
+    La sua particolarità consiste nel fatto che, al posto di calcolare e scegliere la maggiore probabilità 
+    di appartenere ad una certa classe, calcola "il complemento" della probabilità di appartenere a tutte
+    le classi (ovvero di non appartenervi).
+    \newline
+    Più nel dettaglio:
+    \begin{itemize}
+        \item Calcola per ogni classe, data un'istanza, la probabilità di non appartenervi.
+        \item Dopo aver calcolato questa probabilità per ogni classe, sceglie il più piccolo valore fra i risultati.
+        \item Viene selezionato il valore più piccolo in quanto sarà la più piccola probabilità di {\bfseries NON APPARTENERE}
+        a quella determinata classe, ovvero la più alta probabilità di appartenervi. Viene quindi selezionata quest'ultima.
+    \end{itemize} 
     
-        \section{Scelta del modello}
-    
-        Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato, ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
-        L'agente dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento. Inizialmente è stato sottoposto all'agente 
-        un dataset di commenti, ognuno dei quali è contrassegnato da un intero che rappresenta la classe a cui appartiene l'elemento "1", se lo specifico commento è, o contrassegnato da classe "0" se il commento è ham.
-        E' quindi stata creata una tabella dove venivano individuate, per ciascun commento,
-        la frequenza con la quale alcune parole ricorrevano. In questo caso ci è venuto in aiuto l'algoritmo {\bfseries Naive Bayes}:
-        \newline
-        \begin{equation}\label{bho}
-            { p(B|A)  p(A)\over p(B)}
-        \end{equation}
-        \newline
-        che, nel nostro caso, si traduce in:
-        \newline
-        \begin{equation}\label{bho2}
-            p(spam|commento) = { p(commento|spam)  p(spam)\over p(commento)}
-        \end{equation}
-        \newline
-        ovvero, la probabilità che un commento sia spam, è uguale alla probabilità che le parole del commento compaiano in un commento spam, dato che è spam, per la probabilità 
-        che il commento sia spam, diviso la probabilità che queste parole compaiano nel commento.
-    
-    
-
     \chapter{Esecuzione agente}
     
     L'agente, per poter essere eseguito, deve essere integrato all'interno della piattaforma Storytelling.
@@ -316,16 +341,23 @@ a4paper,
         \caption{Immagine di come è stata implementata la comunicazione}
 
     \end{figure}
+
     \newpage
     \section{Risultati finali}
-    L'agente in campo risulta che performa con una buona precisione ma comunque 
+    L'agente, eseguito infine sulla piattaforma, è risultato avere una recall estremamente elevata, classificando
+    correttamente le istanze spam, anche se peccando un pò di precision ed accuracy, presentando una leggera tendenza a 
+    categorizzare come spam anche alcuni commenti che non lo erano.
+
+    Eseguito sulle diverse occorrenze, si è però dimostrato estremamente attendibile, ed utilizzato nella quotidianità
+    di un social svolgerebbe egregiamente il suo compito di supervisione.
 
     \begin{figure}[h!]
         \centering
         \includegraphics[width =\textwidth]{immagini/commentiSpam.png}
-        \caption{Immagine di come è stato modificato il Random State in modo da essere ottimizzato}
+        \caption{Breve esempio di categorizzazione di alcuni commenti Spam}
 
 \end{figure}
+
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  18 JUL 2022 01:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.4)  18 JUL 2022 02:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -379,6 +379,11 @@ l.28     \chapter
 
 ]
 Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--34
+
+ []
+
 [2
 
 ]
@@ -403,106 +408,105 @@ Package pdftex.def Info: immagini/datasetExample.png  used on input line 114.
 <immagini/DatasetSeparati.png, id=119, 867.24pt x 578.16pt>
 File: immagini/DatasetSeparati.png Graphic file (type png)
 <use immagini/DatasetSeparati.png>
-Package pdftex.def Info: immagini/DatasetSeparati.png  used on input line 158.
+Package pdftex.def Info: immagini/DatasetSeparati.png  used on input line 164.
 (pdftex.def)             Requested size: 483.69684pt x 322.47055pt.
-<immagini/DatasetUnico.png, id=121, 433.62pt x 361.35pt>
+ [6 <./immagini/DatasetSeparati.png>]
+<immagini/DatasetUnico.png, id=128, 433.62pt x 361.35pt>
 File: immagini/DatasetUnico.png Graphic file (type png)
 <use immagini/DatasetUnico.png>
-Package pdftex.def Info: immagini/DatasetUnico.png  used on input line 167.
+Package pdftex.def Info: immagini/DatasetUnico.png  used on input line 175.
 (pdftex.def)             Requested size: 348.26608pt x 290.22105pt.
- [6 <./immagini/DatasetSeparati.png> <./immagini/DatasetUnico.png>]
+ [7 <./immagini/DatasetUnico.png>]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--182
+Underfull \hbox (badness 10000) in paragraph at lines 185--193
 
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 183.
+(amsmath)                 on input line 194.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--188
+Underfull \hbox (badness 10000) in paragraph at lines 195--199
 
  []
 
-[7
 
-]
-Overfull \hbox (31.97717pt too wide) in paragraph at lines 211--217
+Overfull \hbox (31.97717pt too wide) in paragraph at lines 225--231
 \OT1/cmr/m/n/10 di test-ing. I vari clas-si-fi-ca-tori sono stati reper-iti dalla li-bre-ria: []https://scikit-learn.org/stable/modules/naive[]bayes.html[]
  []
 
-<immagini/graficoAddestramento.png, id=138, 987.2082pt x 479.1501pt>
+[8
+
+]
+<immagini/graficoAddestramento.png, id=142, 987.2082pt x 479.1501pt>
 File: immagini/graficoAddestramento.png Graphic file (type png)
 <use immagini/graficoAddestramento.png>
-Package pdftex.def Info: immagini/graficoAddestramento.png  used on input line 226.
+Package pdftex.def Info: immagini/graficoAddestramento.png  used on input line 240.
 (pdftex.def)             Requested size: 483.69684pt x 234.76367pt.
-[8 <./immagini/graficoAddestramento.png>]
-<immagini/graficoBuono.png, id=145, 1387.584pt x 711.1368pt>
+ [9 <./immagini/graficoAddestramento.png>]
+<immagini/graficoBuono.png, id=149, 1387.584pt x 711.1368pt>
 File: immagini/graficoBuono.png Graphic file (type png)
 <use immagini/graficoBuono.png>
-Package pdftex.def Info: immagini/graficoBuono.png  used on input line 251.
+Package pdftex.def Info: immagini/graficoBuono.png  used on input line 265.
 (pdftex.def)             Requested size: 483.69684pt x 247.89246pt.
-<immagini/graficoEsecuzione.png, id=146, 987.2082pt x 479.1501pt>
+ [10 <./immagini/graficoBuono.png>]
+<immagini/graficoEsecuzione.png, id=156, 987.2082pt x 479.1501pt>
 File: immagini/graficoEsecuzione.png Graphic file (type png)
 <use immagini/graficoEsecuzione.png>
-Package pdftex.def Info: immagini/graficoEsecuzione.png  used on input line 259.
+Package pdftex.def Info: immagini/graficoEsecuzione.png  used on input line 276.
 (pdftex.def)             Requested size: 483.69684pt x 234.76367pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<immagini/randomState.png, id=147, 927.465pt x 50.1875pt>
+<immagini/randomState.png, id=157, 927.465pt x 50.1875pt>
 File: immagini/randomState.png Graphic file (type png)
 <use immagini/randomState.png>
-Package pdftex.def Info: immagini/randomState.png  used on input line 271.
+Package pdftex.def Info: immagini/randomState.png  used on input line 287.
 (pdftex.def)             Requested size: 483.69684pt x 26.17421pt.
+ [11 <./immagini/graficoEsecuzione.png> <./immagini/randomState.png>]
+Overfull \hbox (1.02412pt too wide) in paragraph at lines 306--308
+[]\OT1/cmr/m/n/10 Viene se-lezion-ato il val-ore pi^^Ru pic-colo in quanto sar^^Ra la pi^^Ru pic-cola prob-a-bilit^^Ra di \OT1/cmr/bx/n/10 NON AP-PARTENERE
+ []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[9 <./immagini/graficoBuono.png>] [10 <./immagini/graficoEsecuzione.png> <./immagini/randomState.png>]
+[12]
 Chapter 5.
-<immagini/puliziaCommenti.png, id=162, 297.36093pt x 55.70813pt>
+<immagini/puliziaCommenti.png, id=171, 297.36093pt x 55.70813pt>
 File: immagini/puliziaCommenti.png Graphic file (type png)
 <use immagini/puliziaCommenti.png>
-Package pdftex.def Info: immagini/puliziaCommenti.png  used on input line 305.
-(pdftex.def)             Requested size: 483.69684pt x 90.6215pt.
-<immagini/socket.png, id=163, 232.61906pt x 164.11313pt>
+Package pdftex.def Info: immagini/puliziaCommenti.png  used on input line 333.
+(pdftex.def)             Requested size: 241.84842pt x 45.30777pt.
+<immagini/socket.png, id=172, 232.61906pt x 164.11313pt>
 File: immagini/socket.png Graphic file (type png)
 <use immagini/socket.png>
-Package pdftex.def Info: immagini/socket.png  used on input line 312.
-(pdftex.def)             Requested size: 483.69684pt x 341.28462pt.
+Package pdftex.def Info: immagini/socket.png  used on input line 340.
+(pdftex.def)             Requested size: 193.47577pt x 136.50183pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<immagini/commentiSpam.png, id=164, 837.1275pt x 99.37125pt>
+[13
+
+ <./immagini/puliziaCommenti.png (PNG copy)>]
+<immagini/commentiSpam.png, id=178, 837.1275pt x 99.37125pt>
 File: immagini/commentiSpam.png Graphic file (type png)
 <use immagini/commentiSpam.png>
-Package pdftex.def Info: immagini/commentiSpam.png  used on input line 322.
+Package pdftex.def Info: immagini/commentiSpam.png  used on input line 356.
 (pdftex.def)             Requested size: 483.69684pt x 57.417pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[11
-
- <./immagini/puliziaCommenti.png (PNG copy)>] [12 <./immagini/socket.png (PNG copy)> <./immagini/commentiSpam.png (PNG copy)>] (doc.aux)
+ [14 <./immagini/socket.png (PNG copy)> <./immagini/commentiSpam.png (PNG copy)>] (doc.aux)
 Package rerunfilecheck Info: File `doc.out' has not changed.
-(rerunfilecheck)             Checksum: FE6CC6BBFAB8D6ECA59D5C8860E490D5;2168.
+(rerunfilecheck)             Checksum: 65E184C334E17C12E6330C9FF982713A;2168.
  ) 
 Here is how much of TeX's memory you used:
- 11048 strings out of 478582
- 180174 string characters out of 2841005
- 471924 words of memory out of 3000000
- 29055 multiletter control sequences out of 15000+600000
+ 11051 strings out of 478582
+ 180196 string characters out of 2841005
+ 472929 words of memory out of 3000000
+ 29056 multiletter control sequences out of 15000+600000
  476224 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,7n,79p,420b,368s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 69i,6n,79p,420b,378s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Muriel Rossi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/Muriel Rossi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on doc.pdf (13 pages, 387145 bytes).
+Output written on doc.pdf (15 pages, 391136 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
+ 252 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
  171 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -159,7 +159,7 @@ a4paper,
 
     \section{Bilanciamento del dataset}
     
-    Il datast, prima di poter essere sottoposto all'agente per l'addestramento, deve risultare bilanciato,
+    Il dataset, prima di poter essere sottoposto all'agente per l'addestramento, deve risultare bilanciato,
     altrimenti si rischia di incorrere in errate valutazioni da parte dell'agente (le minoranze risulterebbero sfavorite).
     \newline
     Il bilanciamento di un dataset si verifica quando il numero delle istanze appartenenti alle varie classi si equivale.
@@ -303,9 +303,16 @@ a4paper,
     \section{Scelta del modello}
     Il ComplementNB è un tipo di algoritmo che si è dimostrato essere particolarmente preciso ed accurato.
     Come tutti i Naive Bayes si basa sulla formula di Bayes della probabilità condizionata.
+    \begin{equation}
+        argmax \ p(y)*\Pi p(w|y)^fi 
+    \end{equation}
+    
     La sua particolarità consiste nel fatto che, al posto di calcolare e scegliere la maggiore probabilità 
     di appartenere ad una certa classe, calcola "il complemento" della probabilità di appartenere a tutte
-    le classi (ovvero di non appartenervi).
+    le classi (ovvero di non appartenervi) 
+    \begin{equation}
+        argmin \ p(y)*\Pi\frac{1}{(w|\hat{y})^fi}
+    \end{equation}
     \newline
     Più nel dettaglio:
     \begin{itemize}

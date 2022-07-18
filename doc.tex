@@ -46,6 +46,13 @@ a4paper,
     
     Questo progetto si prefigge lo scopo di manutenere una piattaforma libera dal bombardamento pubblicitario e dare modo all'utenza di potersi esprimere liberamente
     all'interno di questa, distaccandosi dall'ansia e dalla continua distrazione provocata dal chiasso delle inserzioni.
+    \newline
+    \subsection{Github}
+    Le implementazioni di entrambi i progetti a cui si riferisce questo documento sono disponibili ai seguenti link:
+    \begin{itemize}
+        \item La piattaforma Storytelling \href{https://github.com/E-M-A-A/Storytelling}{https://github.com/E-M-A-A/Storytelling}
+        \item L'agente SpamDetector \href{https://github.com/E-M-A-A/SpamDetectorDev}{https://github.com/E-M-A-A/SpamDetectorDev}
+    \end{itemize}
     \chapter{Descrizione dell'agente}
     Allo scopo di realizzare questo progetto, è stato introdotto un agente intelligente, sarà lui ad occuparsi della supervisione della piattaforma, indagando fra i 
     commenti relativi alle varie pubblicazioni.
@@ -88,7 +95,7 @@ a4paper,
 
     
 
-                        
+  
 
 
    
@@ -96,7 +103,7 @@ a4paper,
     L'agente, prima di essere inserito all'interno della piattaforma, è stato "allenato" su un dataset, scelto accuratamente per massimizzare la somiglianza ai dati con cui dovrà lavorare 
     durante la sua effettiva applicazione. 
     \section{Scelta del dataset}
-    Il dataset preso in esame viene composto da query di commenti relativi a diversi video sulla piattaforma di streaming YouTube. 
+    Il dataset preso in esame viene composto da file CSV di commenti relativi a diversi video sulla piattaforma di streaming YouTube. 
     Consiste in un insieme di tuple presentanti le colonne:
     \begin{itemize}
 
@@ -121,7 +128,7 @@ a4paper,
     E' stato scelto questo dataset in quanto i commenti susseguenti i video si avvicinavano alle possibili tuple di commenti
     di un reale caso applicativo all'interno della piattaforma.
     Inoltre presentava un'amplia gamma di instanze, così da permettere un buon addestramento dell'agente.
-    Le query di commenti sono state trovate a questo indirizzo: \newline 
+    I CSV di commenti sono state trovate a questo indirizzo: \newline 
     \href{https://www.kaggle.com/datasets/lakshmi25npathi/images}{https://www.kaggle.com/datasets/lakshmi25npathi/images}.
     
     \section{Pulizia del dataset}
@@ -142,7 +149,7 @@ a4paper,
         la parola presenti più matches, viene scelta la prima parola ad essere stata individuata;
         \item {\bfseries Eliminazione delle "stopwords"}, tutte le parole che rientravano nel dizionario delle stopwords (ovvero parole che non aggiungono alcuna informazione) 
         sono state eliminate;
-        \item {\bfseries Eliminazione valori nulli}, tutti i testi che, dopo aver superato questa scrematura, risultavano infine vuoti, sono stati eliminati.
+        \item {\bfseries Rimozione valori nulli}, tutti i testi che, dopo aver superato questa scrematura, risultavano infine vuoti, sono stati eliminati visto l'ammontare trascurabile rispetto alla dimensione totale del dataset.
 
  
     \end{itemize}
@@ -363,4 +370,3 @@ a4paper,
 
 
 \end{document}
-

@@ -5,6 +5,7 @@
 \usepackage{graphfig, subfig}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{textcase}
 
 \usepackage{geometry}
 \geometry{
@@ -21,10 +22,86 @@ a4paper,
 \usepackage[Glenn]{fncychap}
 \title{Storytelling} % Sets article title
 \author{Emmanuele Virginio Coppola, Muriel Rossi, Alessandro Marigliano} % Sets authors name
+
 \date{17/07/2022}
 \begin{document} % All begin commands must be paired with an end command somewhere 
-    \maketitle % creates title using information in preamble (title, author, date)  $\downarrow$   \date{\today} % Sets date for date compiled
+    \begin{titlepage}
+    % Suppresses headers and footers on the title page
 
+	\centering % Centre everything on the title page
+	
+	\scshape % Use small caps for all text on the title page
+	
+	\vspace*{\baselineskip} % White space at the top of the page
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal rule
+	\rule{\textwidth}{0.4pt} % Thin horizontal rule
+	
+	\vspace{0.75\baselineskip} % Whitespace above the title
+	
+	{\LARGE SPAMDETECTOR} % Title
+	
+	\vspace{0.75\baselineskip} % Whitespace below the title
+	
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
+	\rule{\textwidth}{1.6pt} % Thick horizontal rule
+	
+	\vspace{2\baselineskip} % Whitespace after the title block
+	
+	%------------------------------------------------
+	%	Subtitle
+	%------------------------------------------------
+	
+	Un'agente intelligente per la classificazione di commenti spam % Subtitle or further description
+	
+	\vspace*{3\baselineskip} % Whitespace under the subtitle
+	
+	%------------------------------------------------
+	%	Editor(s)
+	%------------------------------------------------
+	Professore di Riferimento\\
+	
+	{\LARGE Fabio Palomba\\}
+	
+	\vspace{0.5\baselineskip}
+	
+	Edited By
+	
+	\vspace{0.5\baselineskip} % Whitespace before the editors
+	
+	{\scshape\large Coppola Emmanuele Virginio \\ Marigliano Alessandro \\ Rossi Muriel \\} % Editor list
+	
+	\vspace{0.5\baselineskip} % Whitespace below the editor list
+	
+	\textit{Università degli studi di Salerno \\ Fisciano} % Editor affiliation
+	
+	
+	\vfill % Whitespace between editor names and publisher logo
+	
+	{\large Link ai progetti\\}
+	\textit{ \href{https://github.com/E-M-A-A/Storytelling}{https://github.com/E-M-A-A/Storytelling}\\
+	\href{https://github.com/E-M-A-A/SpamDetectorDev}{https://github.com/E-M-A-A/SpamDetectorDev}
+	}
+	
+	%------------------------------------------------
+	%	Publisher
+	%------------------------------------------------
+	
+	%\plogo % Publisher logo
+	
+	%\vspace{0.3\baselineskip} % Whitespace under the publisher logo
+	
+	\vspace{0.5\baselineskip}
+	
+	2022 % Publication year
+	
+	%{\large publisher} % Publisher
+
+\end{titlepage}
     \tableofcontents
     \chapter{Introduzione} % creates a chapter
     
@@ -46,13 +123,7 @@ a4paper,
     
     Questo progetto si prefigge lo scopo di manutenere una piattaforma libera dal bombardamento pubblicitario e dare modo all'utenza di potersi esprimere liberamente
     all'interno di questa, distaccandosi dall'ansia e dalla continua distrazione provocata dal chiasso delle inserzioni.
-    \newline
-    \subsection{Github}
-    Le implementazioni di entrambi i progetti a cui si riferisce questo documento sono disponibili ai seguenti link:
-    \begin{itemize}
-        \item La piattaforma Storytelling \href{https://github.com/E-M-A-A/Storytelling}{https://github.com/E-M-A-A/Storytelling}
-        \item L'agente SpamDetector \href{https://github.com/E-M-A-A/SpamDetectorDev}{https://github.com/E-M-A-A/SpamDetectorDev}
-    \end{itemize}
+    
     \chapter{Descrizione dell'agente}
     Allo scopo di realizzare questo progetto, è stato introdotto un agente intelligente, sarà lui ad occuparsi della supervisione della piattaforma, indagando fra i 
     commenti relativi alle varie pubblicazioni.
@@ -80,15 +151,15 @@ a4paper,
                 ovvero verranno rimossi gli utenti che l'agente deciderà di segnalare;
                 \item {\bfseries Episodico}, l'agente viene attivato ad intervalli temporali di 24h. La scelta che compirà l'agente in un singolo episodio dipenderà dall'episodio stesso;
                 \item {\bfseries Statico}, mentre analizza la query di commenti, l'ambiente rimane invariato;
-                \item {\bfseries Discreto}, l'ambiente infatti fornisce un insieme di parole finite per ogni commento. L'agente
+                \item {\bfseries Discreto}, l'ambiente fornisce un insieme di parole finite per ogni commento. L'agente
                 dovrà decidere orientandosi fra queste ed avrà azioni limitate (segnalare l'utente o non farlo); 
                 \item {\bfseries Singolo}, l'agente che opererà sarà singolo.
             \end{itemize}
           
         \item 
-        {\bfseries A = Actuators.} L'agente potrà effettuare il suo giudizio stilando una lista di nomi utente relative ai proprietari dei commenti che sono stati sospetatti di spam.
+        {\bfseries A = Actuators.} L'agente potrà effettuare il suo giudizio stilando una lista di nomi utente relativi ai proprietari dei commenti che sono stati sospettati di spam.
         \item 
-        {\bfseries S = Sensors.} Il modo in cui l'agente riceverà gli input percettivi sarà tramite il lista di commenti.
+        {\bfseries S = Sensors.} Il modo in cui l'agente riceverà gli input percettivi sarà tramite una lista di commenti.
         
     \end{itemize}
     
@@ -103,7 +174,7 @@ a4paper,
     L'agente, prima di essere inserito all'interno della piattaforma, è stato "allenato" su un dataset, scelto accuratamente per massimizzare la somiglianza ai dati con cui dovrà lavorare 
     durante la sua effettiva applicazione. 
     \section{Scelta del dataset}
-    Il dataset preso in esame viene composto da file CSV di commenti relativi a diversi video sulla piattaforma di streaming YouTube. 
+    Il dataset preso in esame è stato composto da file CSV di commenti relativi a diversi video sulla piattaforma di streaming YouTube. 
     Consiste in un insieme di tuple presentanti le colonne:
     \begin{itemize}
 
@@ -127,13 +198,13 @@ a4paper,
 
     E' stato scelto questo dataset in quanto i commenti susseguenti i video si avvicinavano alle possibili tuple di commenti
     di un reale caso applicativo all'interno della piattaforma.
-    Inoltre presentava un'amplia gamma di instanze, così da permettere un buon addestramento dell'agente.
-    I CSV di commenti sono state trovate a questo indirizzo: \newline 
+    Inoltre presentava un'ampia gamma di istanze, così da permettere un buon addestramento dell'agente.
+    I CSV di commenti sono stati trovati a questo indirizzo: \newline 
     \href{https://www.kaggle.com/datasets/lakshmi25npathi/images}{https://www.kaggle.com/datasets/lakshmi25npathi/images}.
     
     \section{Pulizia del dataset}
     Il dataset durante la fase di feature extraction, 
-    è stato privato della colonne: "COMMENT\textunderscore ID", "AUTHOR", "DATE", in quanto avrebbero potuto falsare i risultati dell'agente, 
+    è stato privato delle colonne: "COMMENT\textunderscore ID", "AUTHOR", "DATE", in quanto avrebbero potuto falsare i risultati dell'agente, 
     perchè non inerenti all'identificazione di un commento spam.
     L'operazione di pulizia si è poi composta delle seguenti fasi: 
 
@@ -141,15 +212,15 @@ a4paper,
         \item {\bfseries Conversione da uppercase a lowercase}, tutte le lettere in maiuscolo sono state convertite in minuscolo;
         \item {\bfseries Rimozione degli invii}, tutti i "break" sono stati rimossi;
         \item {\bfseries Rimozione della punteggiatura}, è stata eliminata ogni forma di punteggiatura;
-        \item {\bfseries Rimozione dei link};
+        \item {\bfseries Rimozione dei link}, i commenti contenenti link ne sono stati privati;
         \item {\bfseries Rimozione degli spazi}, gli spazi consecutivi, ovvero in  quantità maggiore di 1, sono stati rimossi;
         \item {\bfseries Eliminazione lettere ripetute}, lettere identiche, ripetute in quantità maggiore di 2, sono state rimosse;
         \item {\bfseries Correzione delle parole}, parole non presenti all'interno del vocabolario inglese di Word Reference (scritte quindi in maniera errata oppure in tempi diversi dall'infinito), sono state sottoposte 
-        ad un algoritmo di pattern matching. La funzione nello specifico, cerca inizialmente il match con parole di uso più comune. Il caso in cui
+        ad un algoritmo di pattern matching. La funzione nello specifico, cerca inizialmente il match con parole di uso più comune. Nel caso in cui
         la parola presenti più matches, viene scelta la prima parola ad essere stata individuata;
         \item {\bfseries Eliminazione delle "stopwords"}, tutte le parole che rientravano nel dizionario delle stopwords (ovvero parole che non aggiungono alcuna informazione) 
         sono state eliminate;
-        \item {\bfseries Rimozione valori nulli}, tutti i testi che, dopo aver superato questa scrematura, risultavano infine vuoti, sono stati eliminati visto l'ammontare trascurabile rispetto alla dimensione totale del dataset.
+        \item {\bfseries Rimozione valori nulli}, tutti i testi che, dopo aver superato questa scrematura, risultavano infine vuoti, sono stati eliminati. Si è scelto di effettuare direttamente la rimozione in quanto il dataset presentava un ampio numero di istanze.
 
  
     \end{itemize}
@@ -191,12 +262,8 @@ a4paper,
 
 
     Dopo aver definito gli obiettivi dell'agente, le sue specifiche, l'ambiente in cui avrebbe lavorato ed il suo dataset, si è deciso come andava effettivamente costruito l'agente.
-    Dovrà stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento.
-    E' evidente che, dovendo etichettare in una classe o nell'altra una certa istanza, il modello dell'agente debba essere scelto fra i classificatori. 
-    Inizialmente all'agente è stato sottoposto 
-    un dataset di commenti, ognuno dei quali contrassegnato da un intero, rappresentante la classe a cui appartiene l'elemento: "1", se lo specifico commento è spam, "0" se il commento è ham.
-    E' quindi stata creata una tabella dove venivano individuate, per ciascun commento,
-    la frequenza con la quale alcune parole ricorrevano. In questo caso ci è venuta in aiuto la formula di Bayes:
+    Risulta evidente che, dovendo etichettare in una classe o nell’altra una certa istanza, il modello dell’agente debba essere scelto fra i classificatori. Dovendo stimare se un commento è un avviso pubblicitario o meno con il solo aiuto delle parole presenti nel commento, si è inizialmente individuata la frequenza con la quale ognuna di queste si presentava all’interno di ogni testo.
+    In questo caso ci è venuta in aiuto la formula di Bayes:
     \newline
     \begin{equation}\label{bho}
         { p(B|A)  p(A)\over p(B)}
@@ -233,7 +300,7 @@ a4paper,
     L'addestramento è stato effettuato su diversi tipi di classificatori, in modo da poter selezionare il migliore in fase di testing.
     I vari classificatori sono stati reperiti dalla libreria: \href{https://scikit-learn.org/stable/modules/naive_bayes.html}{https://scikit-learn.org/stable/modules/naive\textunderscore bayes.html}
     ed è stata utilizzata la versione 1.1.1.
-    Nello specifico, ci si è concentrati principalmente su classificatori Naïve Bayes in quanto la loro applicazione risulta consigliata
+    Nello specifico, ci si è concentrati principalmente su classificatori Naive Bayes in quanto la loro applicazione risulta consigliata
     su decisioni inerenti a brevi testi, in oltre risultano essere molto rapidi sia in fase di addestramento che in fase di esecuzione.
     Nello specifico sono stati messi a confronto i classificatori:
     \begin{itemize}
@@ -246,7 +313,7 @@ a4paper,
     \begin{figure}[h!]
         \centering
         \includegraphics[width =\textwidth]{immagini/graficoAddestramento.png}
-        \caption{Grafico che rappresenta i tempi di addestramento di diversi algoritmi Naïve Bayes}
+        \caption{Grafico che rappresenta i tempi di addestramento di diversi algoritmi Naive Bayes}
 
     \end{figure}
 
@@ -271,7 +338,7 @@ a4paper,
         \begin{figure}[h]
             \centering
             \includegraphics[width =\textwidth]{immagini/graficoBuono.png}
-            \caption{Grafico che rappresenta vari parametri di diversi algoritmi Naïve Bayes}
+            \caption{Grafico che rappresenta vari parametri di diversi algoritmi Naive Bayes}
 
         \end{figure}
         
@@ -282,11 +349,11 @@ a4paper,
         \begin{figure}[h]
             \centering
             \includegraphics[width =\textwidth]{immagini/graficoEsecuzione.png}
-            \caption{Grafico che rappresenta il tempo di esecuzione sul Testing Set di diversi algoritmi Naïve Bayes}
+            \caption{Grafico che rappresenta il tempo di esecuzione sul Testing Set di diversi algoritmi Naive Bayes}
         \end{figure}
 
     I vari test sono stati ripetuti anche modificando il Random State: il parametro che permette di ottenere un mescolamento e 
-    un suddivisione tra training e testing set ripetibile nelle varie chiamate.
+    una suddivisione tra training e testing set ripetibile nelle varie chiamate.
     Il valore ottimale del RandomState si è rivelato essere 42.
     
 
@@ -303,17 +370,26 @@ a4paper,
     \section{Scelta del modello}
     Il ComplementNB è un tipo di algoritmo che si è dimostrato essere particolarmente preciso ed accurato.
     Come tutti i Naive Bayes si basa sulla formula di Bayes della probabilità condizionata.
-    \begin{equation}
-        argmax \ p(y)*\Pi p(w|y)^fi 
-    \end{equation}
+  
     
     La sua particolarità consiste nel fatto che, al posto di calcolare e scegliere la maggiore probabilità 
     di appartenere ad una certa classe, calcola "il complemento" della probabilità di appartenere a tutte
     le classi (ovvero di non appartenervi) 
+    
+    \newline
+    \textbf{Formula generale su cui si basa il Multinomial Naive Bayes}
     \begin{equation}
+    \centering
+        argmax \ p(y)*\Pi p(w|y)^fi
+        \end{equation}
+        
+        \textbf{Formula specifica per il Complement Naive Bayes}
+        \begin{equation}
+        \centering
         argmin \ p(y)*\Pi\frac{1}{(w|\hat{y})^fi}
     \end{equation}
     \newline
+    
     Più nel dettaglio:
     \begin{itemize}
         \item Calcola per ogni classe, data un'istanza, la probabilità di non appartenervi.
@@ -337,7 +413,7 @@ a4paper,
         \item si avvia ad un orario prestabilito;
         \item rimane in attesa, fino alla ricezione della richiesta di Storytelling;
         \item riceve dalla socket la lista di commenti da analizzare, in formato JSON, assieme al loro corrispettivo autore;
-        \item li inserisce in un dataframe generato tramite la libreria Pandas ed esegue le operazioni di pulizia, avviandola su processi differenti;
+        \item li inserisce in un dataframe generato tramite la libreria Pandas ed esegue le operazioni di pulizia, avviandole su processi differenti;
         \item esegue la classificazione;
         \item inoltra sulla socket i nominativi degli autori dei commenti che sono stati classificati come spam;
         \item chiude la socket e si termina la sua esecuzione;

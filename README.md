@@ -7,13 +7,13 @@ In caso di segnalazione di un utente spammer, la piattaforma Storytelling provve
 a tutte le sue apparizioni all'interno del social.
 
 
-## Contenuto repository:
+## Contenuto repository
 Nello specifico, la repository contiene:
 - la documentazione del progetto, che descrive le fasi in cui è stato realizzato (doc.tex)
 - file contenente i metodi per effettuare la pulizia dei dati (cleanfun.py)
 - file contenente la realizzazione dell'agente (agente.py)
--file per eseguire l'agente in questione (esecuzioneAgente.py)
--file per popolare la piattaforma Storytelling (fillDB.py)
--file per il compattamento del dataset (compactor.py)
+- file per eseguire l'agente in questione (esecuzioneAgente.py)
+- file per popolare la piattaforma Storytelling (fillDB.py)
+- file per il compattamento del dataset (compactor.py)
 
 

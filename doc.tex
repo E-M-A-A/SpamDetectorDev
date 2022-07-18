@@ -1,3 +1,4 @@
+
 \documentclass{report} 
 
 \usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
@@ -78,9 +79,9 @@ a4paper,
             \end{itemize}
           
         \item 
-        {\bfseries A = Actuators.} L'agente potrà effettuare il suo giudizio stilando una lista di email relative ai proprietari dei commenti che sono stati sospetatti di spam.
+        {\bfseries A = Actuators.} L'agente potrà effettuare il suo giudizio stilando una lista di nomi utente relative ai proprietari dei commenti che sono stati sospetatti di spam.
         \item 
-        {\bfseries S = Sensors.} Il modo in cui l'agente riceverà gli input percettivi sarà tramite il dataset di commenti.I sensori attraverso cui riceve gli input percettivi.
+        {\bfseries S = Sensors.} Il modo in cui l'agente riceverà gli input percettivi sarà tramite il lista di commenti.
         
     \end{itemize}
     
@@ -117,14 +118,14 @@ a4paper,
     \end{figure}
 
 
-    E' stato scelto questo dataset in quanto i commenti susseguenti i video si avvicinavano estremamente alle possibili tuple di commenti
+    E' stato scelto questo dataset in quanto i commenti susseguenti i video si avvicinavano alle possibili tuple di commenti
     di un reale caso applicativo all'interno della piattaforma.
     Inoltre presentava un'amplia gamma di instanze, così da permettere un buon addestramento dell'agente.
     Le query di commenti sono state trovate a questo indirizzo: \newline 
     \href{https://www.kaggle.com/datasets/lakshmi25npathi/images}{https://www.kaggle.com/datasets/lakshmi25npathi/images}.
     
     \section{Pulizia del dataset}
-    Il dataset, nonostante fosse già estremamente adeguato alle esigenze dell'agente, durante la fase di feature extraction, 
+    Il dataset durante la fase di feature extraction, 
     è stato privato della colonne: "COMMENT\textunderscore ID", "AUTHOR", "DATE", in quanto avrebbero potuto falsare i risultati dell'agente, 
     perchè non inerenti all'identificazione di un commento spam.
     L'operazione di pulizia si è poi composta delle seguenti fasi: 
@@ -133,7 +134,7 @@ a4paper,
         \item {\bfseries Conversione da uppercase a lowercase}, tutte le lettere in maiuscolo sono state convertite in minuscolo;
         \item {\bfseries Rimozione degli invii}, tutti i "break" sono stati rimossi;
         \item {\bfseries Rimozione della punteggiatura}, è stata eliminata ogni forma di punteggiatura;
-        \item {\bfseries Trascrizione dei link}, i link sono stati eliminati;
+        \item {\bfseries Rimozione dei link};
         \item {\bfseries Rimozione degli spazi}, gli spazi consecutivi, ovvero in  quantità maggiore di 1, sono stati rimossi;
         \item {\bfseries Eliminazione lettere ripetute}, lettere identiche, ripetute in quantità maggiore di 2, sono state rimosse;
         \item {\bfseries Correzione delle parole}, parole non presenti all'interno del vocabolario inglese di Word Reference (scritte quindi in maniera errata oppure in tempi diversi dall'infinito), sono state sottoposte 
@@ -291,10 +292,10 @@ a4paper,
 
     In base ai vari parametri mostrati in precedenza, è stato scelto di adottare il ComplementNB come modello per l'agente.
    
-    \newpage
+    
     \section{Scelta del modello}
     Il ComplementNB è un tipo di algoritmo che si è dimostrato essere particolarmente preciso ed accurato.
-    Come tutti i Naive Bayes si basa sulla formula di Bayes dellaprobabilità condizionata.
+    Come tutti i Naive Bayes si basa sulla formula di Bayes della probabilità condizionata.
     La sua particolarità consiste nel fatto che, al posto di calcolare e scegliere la maggiore probabilità 
     di appartenere ad una certa classe, calcola "il complemento" della probabilità di appartenere a tutte
     le classi (ovvero di non appartenervi).
@@ -310,10 +311,10 @@ a4paper,
     \chapter{Esecuzione agente}
     
     L'agente, per poter essere eseguito, deve essere integrato all'interno della piattaforma Storytelling.
-    I due sistemi dovranno poter comunicare nonostante siano stati formulati in linguaggi diversi.
+    I due sistemi dovranno poter comunicare nonostante siano stati implementati in linguaggi diversi.
     \newline
     A questo scopo sono state utilizzate delle tecniche che, oltre a essere funzionali per la piattaforma in questione,
-    hanno reso più agevole l'integrazione dell'agente anche in altre piattaforme, scritte in qualsivoglia linguaggio.
+    renderanno più agevole l'integrazione dell'agente anche in altre piattaforme, scritte in qualsivoglia linguaggio.
 
     \section{Prelevamento istanze}
     Il sistema di comunicazione fra l'agente e la piattaforma, essendo scritte rispettivamente in Python 3.10 ed in Java 15.0.2, è stato 
@@ -362,3 +363,4 @@ a4paper,
 
 
 \end{document}
+
